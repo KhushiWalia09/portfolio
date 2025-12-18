@@ -14,8 +14,9 @@
 
 .contact-text {
   font-size: 1.1rem;
-  color: #cbd5f5;
+  color: #f0f4ff;
   margin-bottom: 40px;
+  -webkit-font-smoothing: antialiased;
 }
 
 .contact-info p {

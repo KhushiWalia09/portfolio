@@ -61,7 +61,9 @@ a:hover {
 .experience-card h3 {
   font-size: 1.4rem;
   margin-bottom: 6px;
-  color: #e5e7eb;
+  color: #ffffff;
+  font-weight: 700;
+  -webkit-font-smoothing: antialiased;
 }
 
 .experience-duration {
@@ -73,7 +75,8 @@ a:hover {
 
 .experience-card p,
 .experience-card li {
-  color: #cbd5f5;
+  color: #f0f4ff;
+  -webkit-font-smoothing: antialiased;
 }
 
 .experience-card ul {
