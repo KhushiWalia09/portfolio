@@ -37,8 +37,28 @@ function Experience() {
               practical applications of technology through hands-on guidance.
             </li>
           </ul>
-
-          <span className="experience-tech">Digital Literacy • Documentation • Communication</span>
+          <div className="project-links">
+            <a
+              href="/internship-certificate.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="project-btn primary"
+            >
+              📄 Internship Certificate
+            </a>
+            <a
+              href="https://drive.google.com/drive/folders/1hXIHjJ8bxyJNQOwH0GeIqqOD0zQGFvCH?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="project-btn secondary"
+            >
+              📷 Internship Snaps
+            </a>
+          </div>
+          <br></br>
+          <span className="experience-tech">
+            Digital Literacy • Documentation • Communication
+          </span>
         </div>
       </div>
     </section>

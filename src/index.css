@@ -19,9 +19,11 @@ h4,
 h5,
 h6 {
   color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff;
   font-weight: 700;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 section h2 {
@@ -153,7 +155,7 @@ nav a:hover {
   opacity: 0;
   transform: translateY(50px);
   transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
-              transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Active state when element is visible */
@@ -163,16 +165,33 @@ nav a:hover {
 }
 
 /* Stagger animation for child elements */
-.reveal.active > * {
+.reveal.active>* {
   animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) backwards;
 }
 
-.reveal.active > *:nth-child(1) { animation-delay: 0.1s; }
-.reveal.active > *:nth-child(2) { animation-delay: 0.2s; }
-.reveal.active > *:nth-child(3) { animation-delay: 0.3s; }
-.reveal.active > *:nth-child(4) { animation-delay: 0.4s; }
-.reveal.active > *:nth-child(5) { animation-delay: 0.5s; }
-.reveal.active > *:nth-child(6) { animation-delay: 0.6s; }
+.reveal.active>*:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.reveal.active>*:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.reveal.active>*:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.reveal.active>*:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.reveal.active>*:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.reveal.active>*:nth-child(6) {
+  animation-delay: 0.6s;
+}
 
 /* Fade in up animation */
 @keyframes fadeInUp {
@@ -180,6 +199,7 @@ nav a:hover {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -191,7 +211,7 @@ nav a:hover {
   opacity: 0;
   transform: translateX(-50px);
   transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
-              transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .reveal-left.active {
@@ -203,7 +223,7 @@ nav a:hover {
   opacity: 0;
   transform: translateX(50px);
   transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
-              transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .reveal-right.active {
@@ -215,7 +235,7 @@ nav a:hover {
   opacity: 0;
   transform: scale(0.9);
   transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
-              transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .reveal-scale.active {
@@ -225,6 +245,7 @@ nav a:hover {
 
 /* Respect reduced motion preferences */
 @media (prefers-reduced-motion: reduce) {
+
   .reveal,
   .reveal-left,
   .reveal-right,
