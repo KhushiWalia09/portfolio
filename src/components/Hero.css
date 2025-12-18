@@ -37,6 +37,7 @@
 .hero-title .greeting {
   display: inline;
   color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
   animation: slideInLeft 0.8s ease forwards;
   opacity: 0;
 }
@@ -44,6 +45,7 @@
 .hero-title .name {
   display: inline;
   color: #38bdf8 !important;
+  -webkit-text-fill-color: #1a556f !important;
   /* Vibrant blue for contrast */
   animation: slideInRight 0.8s ease 0.3s forwards;
   opacity: 0;
