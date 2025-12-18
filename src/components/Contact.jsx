@@ -15,7 +15,6 @@ function Contact() {
           <p><strong>Email:</strong> khushiwalia79@gmail.com</p>
           <p><strong>LinkedIn:</strong> linkedin.com/in/khushi</p>
           <p><strong>GitHub:</strong> github.com/khushi</p>
-          <p><strong>Mobile Number:</strong> +91 7827584402</p>
         </div>
       </div>
     </section>
