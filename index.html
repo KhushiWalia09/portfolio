@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>my-website</title>
+  <script>
+    // Prevent auto-scroll BEFORE React loads
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+
+    // Prevent any hash-based navigation on load
+    if (window.location.hash) {
+      window.location.hash = '';
+    }
+
+    // Aggressive scroll prevention
+    function forceScrollTop() {
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    }
+
+    // Immediate execution
+    forceScrollTop();
+
+    // On DOM ready
+    window.addEventListener('DOMContentLoaded', forceScrollTop);
+
+    // On full load
+    window.addEventListener('load', forceScrollTop);
+
+    // Prevent scroll during page load
+    let scrollAttempts = 0;
+    const maxAttempts = 50;
+    const scrollInterval = setInterval(function () {
+      forceScrollTop();
+      scrollAttempts++;
+      if (scrollAttempts >= maxAttempts) {
+        clearInterval(scrollInterval);
+      }
+    }, 10);
+
+    // Clear interval after page is fully loaded
+    window.addEventListener('load', function () {
+      setTimeout(function () {
+        clearInterval(scrollInterval);
+      }, 500);
+    });
+  </script>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
+</html>

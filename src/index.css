@@ -1,0 +1,126 @@
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  /* Enhanced smooth scrolling */
+  scroll-padding-top: 0;
+}
+
+/* Performance optimizations */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+  scroll-padding-top: 0;
+  /* Hardware acceleration for smooth scrolling */
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+}
+
+section {
+  /* Optimize section rendering */
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+section:not(#hero) {
+  scroll-margin-top: 90px;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(180deg,
+      #90cbeb 0%,
+      #020617 100%);
+  color: white;
+  /* Smooth transitions */
+  transition: background-color 0.3s ease;
+}
+
+header {
+  background-color: #222;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  /* Smooth header transitions */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+main {
+  padding: 40px;
+  min-height: 70vh;
+}
+
+footer {
+  background-color: #eee;
+  text-align: center;
+  padding: 10px;
+}
+
+nav a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+  /* Smooth link transitions */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: white;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+nav a:hover {
+  transform: translateY(-2px);
+}
+
+/* Smooth scroll snap for better UX (optional) */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Responsive Typography Base */
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+    /* Slightly smaller base font on mobile */
+  }
+
+  main {
+    padding: 20px;
+    /* Reduced padding on mobile */
+  }
+
+  section:not(#hero) {
+    scroll-margin-top: 70px;
+    /* Adjust for smaller header */
+  }
+}

@@ -1,0 +1,54 @@
+.contact-section {
+  background-color: linear-gradient(180deg,
+      #90cbeb 0%,
+      #020617 100%);
+  padding: 100px 20px;
+}
+
+.contact-container {
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+  color: white;
+}
+
+.contact-text {
+  font-size: 1.1rem;
+  color: #cbd5f5;
+  margin-bottom: 40px;
+}
+
+.contact-info p {
+  margin: 12px 0;
+  font-size: 1rem;
+}
+
+.contact-info strong {
+  color: #38bdf8;
+}
+
+.contact-container {
+  animation: fadeUp 1.2s ease forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-text {
+    font-size: 1rem;
+  }
+
+  .contact-section {
+    padding: 60px 20px;
+  }
+}
