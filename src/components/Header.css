@@ -149,32 +149,35 @@ nav a:hover::after {
   .nav-menu {
     position: fixed;
     left: -100%;
-    top: 0;
+    top: 64px;
+    /* Adjust to stay below header */
     flex-direction: column;
     background: rgba(15, 23, 42, 0.98);
     width: 100%;
-    height: 100vh;
-    justify-content: center;
+    height: calc(100vh - 64px);
+    justify-content: flex-start;
     align-items: center;
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    backdrop-filter: blur(15px);
+    padding-top: 50px;
+    transition: all 0.4s ease;
+    backdrop-filter: blur(10px);
     z-index: 1000;
   }
 
   .nav-menu a {
-    margin: 1.5rem 0;
-    font-size: 1.8rem;
-    color: #f8fafc;
+    margin: 1rem 0;
+    font-size: 1.4rem;
+    color: #f8fafc !important;
     font-weight: 700;
-    -webkit-text-fill-color: #f8fafc;
-    opacity: 0;
-    transform: translateY(20px);
+    -webkit-text-fill-color: #f8fafc !important;
+    opacity: 1;
+    /* Ensure clarity */
+    transform: none;
     transition: all 0.3s ease;
   }
 
   .nav-menu.active a {
     opacity: 1;
-    transform: translateY(0);
+    transform: none;
   }
 
   /* Successive delay for menu items */
