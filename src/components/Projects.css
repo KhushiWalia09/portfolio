@@ -105,3 +105,4 @@
   margin-top: 12px;
   flex-wrap: wrap;
 }
+@media (max-width: 768px) { @supports (-webkit-touch-callout: none) { .projects .section-title { font-weight: 900 !important; } } }

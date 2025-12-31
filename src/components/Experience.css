@@ -136,3 +136,4 @@ a:hover {
     font-size: 1.2rem;
   }
 }
+@media (max-width: 768px) { @supports (-webkit-touch-callout: none) { .experience .section-title { font-weight: 900 !important; } } }

@@ -125,3 +125,4 @@
 .achievement-card:hover::after {
   opacity: 1;
 }
+@media (max-width: 768px) { @supports (-webkit-touch-callout: none) { .achievements h2 { font-weight: 900 !important; } } }

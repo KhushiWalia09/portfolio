@@ -165,23 +165,6 @@ nav a:hover {
   }
 }
 
-/* Responsive Typography Base */
-@media (max-width: 768px) {
-  html {
-    font-size: 14px;
-    /* Slightly smaller base font on mobile */
-  }
-
-  main {
-    padding: 20px;
-    /* Reduced padding on mobile */
-  }
-
-  section:not(#hero) {
-    scroll-margin-top: 70px;
-    /* Adjust for smaller header */
-  }
-}
 
 /* ============================================
    SCROLL REVEAL ANIMATIONS
