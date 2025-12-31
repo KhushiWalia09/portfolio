@@ -85,3 +85,26 @@
     transform: translateY(0);
   }
 }
+.achievement-card {
+  transform-style: preserve-3d;
+  transition: transform 0.15s ease, box-shadow 0.3s ease;
+}
+
+/* Cursor-follow light */
+.achievement-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    600px circle at var(--mouse-x) var(--mouse-y),
+    rgba(0, 180, 255, 0.35),
+    transparent 40%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.achievement-card:hover::after {
+  opacity: 1;
+}
