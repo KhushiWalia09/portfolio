@@ -1,19 +1,28 @@
 .about-section {
+  background-color: linear-gradient(180deg,
+      #90cbeb 0%,
+      #020617 100%);
   padding: 100px 20px;
-  background: radial-gradient(circle at top left, #0f172a 0%, #020617 100%);
 }
 
 .about-container {
-  max-width: 800px;
+  max-width: 900px;
   margin: auto;
-  color: var(--text-primary);
+  color: white;
 }
 
 .about-text {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   line-height: 1.8;
-  color: var(--text-secondary);
+  color: #f0f4ff;
   margin-bottom: 25px;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    background: radial-gradient(circle at top left, #0f172a 0%, #020617 100%) !important;
+  }
 }
 
 @media (max-width: 768px) {

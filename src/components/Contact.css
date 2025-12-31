@@ -1,5 +1,7 @@
 .contact-section {
-  background: radial-gradient(circle at bottom, #0f172a 0%, #020617 100%);
+  background-color: linear-gradient(180deg,
+      #90cbeb 0%,
+      #020617 100%);
   padding: 100px 20px;
 }
 
@@ -7,14 +9,20 @@
   max-width: 800px;
   margin: auto;
   text-align: center;
-  color: var(--text-primary);
+  color: white;
 }
 
 .contact-text {
-  font-size: 1.2rem;
-  color: var(--text-secondary);
+  font-size: 1.1rem;
+  color: #f0f4ff;
   margin-bottom: 40px;
-  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (max-width: 768px) {
+  .contact-section {
+    background: radial-gradient(circle at bottom, #0f172a 0%, #020617 100%) !important;
+  }
 }
 
 .contact-info p {
