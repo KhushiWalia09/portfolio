@@ -5,10 +5,12 @@ html {
   scroll-padding-top: 0;
 }
 
-/* Performance optimizations */
+/* Performance optimizations and iOS resets */
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
+  /* Remove gray tap box on iOS */
 }
 
 /* iOS Safari text visibility fixes */
