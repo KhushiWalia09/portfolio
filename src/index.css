@@ -1,3 +1,16 @@
+:root {
+  --bg-dark: #020617;
+  --bg-light: #0f172a;
+  --accent: #38bdf8;
+  --accent-hover: #0ea5e9;
+  --text-primary: #ffffff;
+  --text-secondary: #94a3b8;
+  --text-dim: #64748b;
+  --card-bg: rgba(255, 255, 255, 0.04);
+  --card-border: rgba(255, 255, 255, 0.1);
+  --glass-bg: rgba(15, 23, 42, 0.85);
+}
+
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
@@ -10,7 +23,7 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-tap-highlight-color: transparent;
-  /* Remove gray tap box on iOS */
+  box-sizing: border-box;
 }
 
 /* iOS Safari text visibility fixes */
@@ -20,18 +33,22 @@ h3,
 h4,
 h5,
 h6 {
-  color: #ffffff !important;
-  -webkit-text-fill-color: #ffffff;
+  color: var(--text-primary);
   font-weight: 700;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  margin-top: 0;
 }
 
 section h2 {
-  font-size: 2.2rem;
+  font-size: 2.5rem;
   margin-bottom: 40px;
   text-align: center;
+  background: linear-gradient(135deg, #ffffff 0%, #94a3b8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 html,
@@ -54,13 +71,12 @@ section:not(#hero) {
 
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(180deg,
-      #90cbeb 0%,
-      #020617 100%);
-  color: white;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: radial-gradient(circle at top, #0f172a 0%, #020617 100%);
+  color: var(--text-primary);
   /* Smooth transitions */
   transition: background-color 0.3s ease;
+  min-height: 100vh;
 }
 
 header {

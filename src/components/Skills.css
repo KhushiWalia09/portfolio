@@ -1,18 +1,15 @@
 .skills {
   padding: 80px 60px;
-  background-color: linear-gradient(180deg,
-      #90cbeb 0%,
-      #020617 100%);
-  color: white;
+  background: radial-gradient(circle at center, #0f172a 0%, #020617 100%);
+  color: var(--text-primary);
   text-align: center;
 }
 
 .section-title {
   font-size: 2.2rem;
   margin-bottom: 40px;
-  color: #ffffff;
+  color: var(--text-primary);
   font-weight: 700;
-  -webkit-font-smoothing: antialiased;
 }
 
 .skills-grid {

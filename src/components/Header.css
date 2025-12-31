@@ -16,7 +16,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 1.2rem 5%;
-  background: rgba(255, 255, 255, 0.85);
+  background: var(--glass-bg);
   /* Glassmorphism background */
   position: sticky;
   top: 0;
@@ -24,8 +24,8 @@
   backdrop-filter: blur(15px) saturate(180%);
   -webkit-backdrop-filter: blur(15px) saturate(180%);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid var(--card-border);
   /* Safari/iOS specific fixes */
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
@@ -60,18 +60,18 @@ nav a.active::after {
 
 nav a {
   position: relative;
-  color: #334155;
+  color: var(--text-secondary);
   margin-left: 2rem;
   text-decoration: none;
   font-weight: 600;
   font-size: 1.05rem;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
   /* Safari/iOS specific fixes */
   text-rendering: optimizeLegibility;
 }
 
 nav a:hover {
-  color: #0f172a;
+  color: var(--text-primary);
 }
 
 /* 🔥 Animated underline */

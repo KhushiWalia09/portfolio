@@ -1,7 +1,5 @@
 .contact-section {
-  background-color: linear-gradient(180deg,
-      #90cbeb 0%,
-      #020617 100%);
+  background: radial-gradient(circle at bottom, #0f172a 0%, #020617 100%);
   padding: 100px 20px;
 }
 
@@ -9,14 +7,14 @@
   max-width: 800px;
   margin: auto;
   text-align: center;
-  color: white;
+  color: var(--text-primary);
 }
 
 .contact-text {
-  font-size: 1.1rem;
-  color: #f0f4ff;
+  font-size: 1.2rem;
+  color: var(--text-secondary);
   margin-bottom: 40px;
-  -webkit-font-smoothing: antialiased;
+  line-height: 1.7;
 }
 
 .contact-info p {

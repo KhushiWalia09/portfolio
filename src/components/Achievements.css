@@ -30,12 +30,10 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    120deg,
-    transparent,
-    rgba(0, 200, 255, 0.25),
-    transparent
-  );
+  background: linear-gradient(120deg,
+      transparent,
+      rgba(0, 200, 255, 0.25),
+      transparent);
   opacity: 0;
   transition: opacity 0.4s ease;
 }
@@ -56,15 +54,16 @@
 }
 
 .achievement-card h3 {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   color: var(--accent);
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 }
 
 .achievement-card p {
-  line-height: 1.6;
-  opacity: 0.9;
+  line-height: 1.7;
+  color: var(--text-secondary);
 }
+
 .achievement-card {
   position: relative;
   padding: 35px 28px;
@@ -75,16 +74,19 @@
   transition: all 0.35s ease;
   animation: fadeUp 0.8s ease forwards;
 }
+
 @keyframes fadeUp {
   from {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
+
 .achievement-card {
   transform-style: preserve-3d;
   transition: transform 0.15s ease, box-shadow 0.3s ease;
@@ -95,11 +97,9 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(
-    600px circle at var(--mouse-x) var(--mouse-y),
-    rgba(0, 180, 255, 0.35),
-    transparent 40%
-  );
+  background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y),
+      rgba(0, 180, 255, 0.35),
+      transparent 40%);
   opacity: 0;
   transition: opacity 0.3s ease;
   pointer-events: none;

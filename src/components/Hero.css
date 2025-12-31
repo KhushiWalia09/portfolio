@@ -6,14 +6,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(120deg, #788dbe, #020617);
-  color: white;
+  background: radial-gradient(circle at top right, #1e293b 0%, #020617 100%);
+  color: var(--text-primary);
   text-align: center;
   overflow: hidden;
   min-height: 100vh;
   min-height: 100dvh;
   /* Dynamic viewport height */
-  background: var(--bg-gradient);
 }
 
 .particle-canvas {
