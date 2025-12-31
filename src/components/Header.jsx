@@ -32,7 +32,7 @@ function Header() {
         <a href="#experience" data-link="experience" onClick={closeMenu}>
           Experience
         </a>
-        <a href="#achievements" data-link="achievements">
+        <a href="#achievements" data-link="achievements" onClick={closeMenu}>
           Achievements
         </a>
         <a href="#skills" data-link="skills" onClick={closeMenu}>
