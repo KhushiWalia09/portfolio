@@ -23,6 +23,7 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.35s ease;
   overflow: hidden;
+  animation: fadeUp 0.8s ease forwards;
 }
 
 /* Accent glow strip */
@@ -72,24 +73,12 @@
 
   .achievement-card h3 {
     color: #38bdf8 !important;
-    /* Force visibility for iPhone */
   }
 
   .achievement-card p {
     color: #ffffff !important;
     opacity: 1 !important;
   }
-}
-
-.achievement-card {
-  position: relative;
-  padding: 35px 28px;
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: all 0.35s ease;
-  animation: fadeUp 0.8s ease forwards;
 }
 
 @keyframes fadeUp {
@@ -125,4 +114,17 @@
 .achievement-card:hover::after {
   opacity: 1;
 }
-@media (max-width: 768px) { @supports (-webkit-touch-callout: none) { .achievements h2 { font-weight: 900 !important; } } }
+
+/* ============================================
+   IPHONE-SPECIFIC VISIBILITY FIX
+   ============================================ */
+@media (max-width: 768px) {
+  @supports (-webkit-touch-callout: none) {
+    .achievements h2 {
+      font-weight: 900 !important;
+      color: #020617 !important;
+      -webkit-text-fill-color: #020617 !important;
+      text-shadow: 0 1px 1px rgba(255, 255, 255, 0.4) !important;
+    }
+  }
+}
