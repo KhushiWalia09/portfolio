@@ -1,25 +1,51 @@
 import "./Skills.css";
 
 function Skills() {
-  const skills = [
+  const primarySkills = [
     "HTML",
     "CSS",
     "JavaScript",
     "React",
     "Excel",
+  ];
+  const SecondarySkills = [
+    "Git", 
+    "GitHub",
     "Stop-Motion Animation",
   ];
 
   return (
     <section className="skills" id="skills">
-      <h2 className="section-title">Skills</h2>
+      <div className="container">
+        <h2 className="section-title reveal">My Skills</h2>
 
-      <div className="skills-grid reveal">
-        {skills.map((skill, index) => (
-          <div className="skill-card" key={index}>
-            {skill}
+        <div className="skills-columns">
+          {/* Primary Skills */}
+          <div className="skills-column reveal-left">
+            <h3 className="skills-subtitle">Primary Skills</h3>
+            <div className="skills-grid">
+              {primarySkills.map((skill, index) => (
+                <div className="skill-card" key={index}>
+                  <div className="skill-icon-placeholder"></div>
+                  <span>{skill}</span>
+                </div>
+              ))}
+            </div>
           </div>
-        ))}
+
+          {/* Secondary Skills */}
+          <div className="skills-column reveal-right">
+            <h3 className="skills-subtitle">Secondary Skills</h3>
+            <div className="skills-grid">
+              {SecondarySkills.map((skill, index) => (
+                <div className="skill-card" key={index}>
+                  <div className="skill-icon-placeholder"></div>
+                  <span>{skill}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

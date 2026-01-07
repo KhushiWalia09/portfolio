@@ -46,19 +46,32 @@ function Projects() {
           <span>Java • Swing</span>
         </div>
         <div className="project-card">
-          <h3>Connectly</h3>
-          <a
-            href="https://github.com/KhushiWalia09/Connectly.git"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="project-btn"
-          >
-            📄 View Project
-          </a>
+          <h3>The Divine Drift</h3>
+          <div className="project-links">
+            <a
+              href="https://github.com/KhushiWalia09/Divine-Drift.git"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="project-btn primary"
+            >
+              📄 View Project
+            </a>
+            <a
+              href="https://divine-drift.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="project-btn secondary"
+            >
+              🎮 Play
+            </a>
+          </div>
+          <p>
+            A 2D browser game built with HTML5 Canvas featuring smooth
+            animations, sound effects, power-ups, and responsive controls across
+            devices.
+          </p>
 
-          <p>React-based social connection app with a clean and responsive user interface.</p>
-
-          <span>React • CSS • JavaScript</span>
+          <span>HTML Canvas • CSS • JavaScript • Audio API</span>
         </div>
       </div>
     </section>
