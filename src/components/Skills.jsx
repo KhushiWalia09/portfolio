@@ -12,6 +12,7 @@ function Skills() {
     "Git", 
     "GitHub",
     "Stop-Motion Animation",
+    "Python",
   ];
 
   return (
