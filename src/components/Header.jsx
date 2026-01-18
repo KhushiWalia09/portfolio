@@ -1,7 +1,8 @@
 import { useState } from "react";
 import "./Header.css";
 
-function Header() {
+function Header({ toggleTheme, theme }) {
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -15,8 +16,9 @@ function Header() {
   return (
     <header className="header">
       <h2 className="logo">
-        <i>Khushi's Portfolio Website</i>
+        <span className="text-gradient">Khushi's Portfolio</span>
       </h2>
+
 
       {/* Hamburger Icon */}
       <div className={`hamburger ${isMenuOpen ? "active" : ""}`} onClick={toggleMenu}>
@@ -44,7 +46,11 @@ function Header() {
         <a href="#contact" data-link="contact" onClick={closeMenu}>
           Contact
         </a>
+        <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle Theme">
+          {theme === "dark" ? "☀️" : "🌙"}
+        </button>
       </nav>
+
     </header>
   );
 }

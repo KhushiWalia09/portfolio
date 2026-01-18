@@ -11,15 +11,16 @@ function Achievements() {
     const centerX = rect.width / 2;
     const centerY = rect.height / 2;
 
-    const rotateX = -(y - centerY) / 18;
-    const rotateY = (x - centerX) / 18;
+    const rotateX = -(y - centerY) / 20;
+    const rotateY = (x - centerX) / 20;
 
     card.style.transform = `
-      perspective(1000px)
+      perspective(2000px)
       rotateX(${rotateX}deg)
       rotateY(${rotateY}deg)
-      translateY(-6px)
+      translateY(-10px)
     `;
+
 
     card.style.setProperty("--mouse-x", `${x}px`);
     card.style.setProperty("--mouse-y", `${y}px`);
@@ -28,16 +29,18 @@ function Achievements() {
   const handleMouseLeave = (e) => {
     const card = e.currentTarget;
     card.style.transform =
-      "perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0)";
+      "perspective(2000px) rotateX(0deg) rotateY(0deg) translateY(0)";
+
   };
 
   return (
     <section className="achievements" id="achievements">
-      <h2>Achievements</h2>
+      <h2 className="section-title reveal"><span className="text-gradient">Achievements</span></h2>
+
 
       <div className="achievement-list reveal">
         <div
-          className="achievement-card"
+          className="achievement-card glass-card"
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
         >
@@ -50,7 +53,7 @@ function Achievements() {
         </div>
 
         <div
-          className="achievement-card"
+          className="achievement-card glass-card"
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
         >
@@ -63,7 +66,7 @@ function Achievements() {
         </div>
 
         <div
-          className="achievement-card"
+          className="achievement-card glass-card"
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
         >
@@ -75,7 +78,7 @@ function Achievements() {
         </div>
 
         <div
-          className="achievement-card"
+          className="achievement-card glass-card"
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
         >

@@ -3,10 +3,10 @@ import "./Projects.css";
 function Projects() {
   return (
     <section className="projects" id="projects">
-      <h2 className="section-title">Projects</h2>
+      <h2 className="section-title"><span className="text-gradient">Projects</span></h2>
 
       <div className="projects-grid reveal">
-        <div className="project-card">
+        <div className="project-card glass-card">
           <h3>Stop-Motion Animation Videos</h3>
           <div className="project-links">
             <a
@@ -21,7 +21,7 @@ function Projects() {
               href="/play-with-scissors.mp4"
               target="_blank"
               rel="noopener noreferrer"
-              className="project-btn secondary"
+              className="project-btn primary"
             >
               🎬 Play With Scissors
             </a>
@@ -30,22 +30,24 @@ function Projects() {
           <span>Stop Motion Studio • Capcut</span>
         </div>
 
-        <div className="project-card">
+        <div className="project-card glass-card">
           <h3>Event Management System</h3>
-          <a
-            href="https://github.com/KhushiWalia09/Event-Management-System.git"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="project-btn"
-          >
-            📄 View Project
-          </a>
+          <div className="project-links">
+            <a
+              href="https://github.com/KhushiWalia09/Event-Management-System.git"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="project-btn primary"
+            >
+              📄 View Project
+            </a>
+          </div>
 
           <p>Java-based system with structured UI.</p>
 
           <span>Java • Swing</span>
         </div>
-        <div className="project-card">
+        <div className="project-card glass-card">
           <h3>The Divine Drift</h3>
           <div className="project-links">
             <a
@@ -60,7 +62,7 @@ function Projects() {
               href="https://divine-drift.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
-              className="project-btn secondary"
+              className="project-btn primary"
             >
               🎮 Play
             </a>
@@ -74,6 +76,7 @@ function Projects() {
           <span>HTML Canvas • CSS • JavaScript • Audio API</span>
         </div>
       </div>
+
     </section>
   );
 }

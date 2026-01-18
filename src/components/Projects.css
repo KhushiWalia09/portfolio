@@ -1,123 +1,77 @@
 .projects {
-  padding: 80px 60px;
-  background-color: linear-gradient(180deg,
-      #90cbeb 0%,
-      #020617 100%);
-  color: white;
+  padding: 80px 20px;
+  background: var(--background);
 }
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .project-card {
-  background: #0f172a;
-  padding: 30px;
-  border-radius: 18px;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
-  gap: 15px;
-
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 0 30px rgba(56, 189, 248, 0.35);
+  gap: 1.2rem;
 }
 
 .project-card h3 {
-  font-size: 1.3rem;
-  color: #ffffff;
+  font-size: 1.4rem;
+  color: var(--text-main);
   font-weight: 700;
-  -webkit-font-smoothing: antialiased;
 }
 
 .project-card p {
-  color: #f0f4ff;
-  -webkit-font-smoothing: antialiased;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
 }
 
 .project-card span {
   font-size: 0.85rem;
-  color: #38bdf8;
-}
-
-.project-buttons {
-  margin-top: auto;
-  display: flex;
-  gap: 15px;
-}
-
-.project-buttons button {
-  flex: 1;
-  padding: 10px;
-  border-radius: 25px;
-  border: none;
-  cursor: pointer;
-  font-weight: bold;
-  background-color: #38bdf8;
-  color: #020617;
-  transition: 0.3s ease;
-}
-
-.project-buttons button:hover {
-  background-color: #0ea5e9;
-}
-
-@media (max-width: 768px) {
-  .projects {
-    padding: 60px 20px;
-  }
-
-  .projects-grid {
-    grid-template-columns: 1fr;
-    /* Single column on mobile */
-  }
-
-  .project-card {
-    margin-bottom: 20px;
-  }
-}
-
-.project-btn {
-  display: inline-block;
-  margin-top: 12px;
-  padding: 10px 16px;
-  max-width: fit-content;
-  background: linear-gradient(135deg, #7c5cff, #4fc3f7);
-  color: #fff;
+  color: var(--primary);
   font-weight: 600;
-  border-radius: 10px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 8px 20px rgba(79, 195, 247, 0.3);
-}
-
-.project-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(124, 92, 255, 0.45);
+  margin-top: auto;
 }
 
 .project-links {
   display: flex;
-  gap: 20px;
-  margin-top: 12px;
+  gap: 1rem;
+  margin-top: 0.5rem;
   flex-wrap: wrap;
 }
 
-/* ============================================
-   IPHONE-SPECIFIC VISIBILITY FIX
-   ============================================ */
+.project-btn {
+  padding: 0.6rem 1.2rem;
+  background: var(--primary);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.project-btn:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+.project-btn.secondary {
+  background: var(--glass-border);
+  color: var(--text-main);
+}
+
+.project-btn.secondary:hover {
+  background: var(--primary);
+  color: white;
+}
+
 @media (max-width: 768px) {
-  @supports (-webkit-touch-callout: none) {
-    .projects .section-title {
-      font-weight: 900 !important;
-      color: #020617 !important;
-      -webkit-text-fill-color: #020617 !important;
-      text-shadow: 0 1px 1px rgba(255, 255, 255, 0.4) !important;
-    }
+  .projects-grid {
+    grid-template-columns: 1fr;
   }
 }

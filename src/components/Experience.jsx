@@ -3,12 +3,13 @@ import "./Experience.css";
 function Experience() {
   return (
     <section className="experience" id="experience">
-      <h2 className="section-title">Experience</h2>
+      <h2 className="section-title"><span className="text-gradient">Experience</span></h2>
 
       <div className="experience-wrapper">
         <div className="experience-line"></div>
 
-        <div className="experience-card reveal">
+        <div className="experience-card glass-card reveal">
+
           <span className="experience-dot"></span>
 
           <h3>The Sanshil Foundation - Internship</h3>

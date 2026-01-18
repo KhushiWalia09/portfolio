@@ -60,7 +60,8 @@ function Hero() {
       }
 
       draw() {
-        ctx.fillStyle = "rgba(0, 0, 0, 0.7)"; // Dark particles
+        const theme = document.documentElement.getAttribute("data-theme");
+        ctx.fillStyle = theme === "light" ? "rgba(79, 70, 229, 0.3)" : "rgba(255, 255, 255, 0.3)";
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         ctx.fill();
@@ -88,9 +89,11 @@ function Hero() {
               const dy = particle.y - p2.y;
               const distance = Math.sqrt(dx * dx + dy * dy);
 
-              if (distance < 100) {
+              if (distance < 120) {
+                  const theme = document.documentElement.getAttribute("data-theme");
+                  const color = theme === "light" ? "79, 70, 229" : "255, 255, 255";
                   ctx.beginPath();
-                  ctx.strokeStyle = `rgba(0, 0, 0, ${1 - distance / 100})`; // Fade line
+                  ctx.strokeStyle = `rgba(${color}, ${0.2 - distance / 600})`; 
                   ctx.lineWidth = 0.5;
                   ctx.moveTo(particle.x, particle.y);
                   ctx.lineTo(p2.x, p2.y);

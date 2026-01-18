@@ -18,7 +18,8 @@ function Skills() {
   return (
     <section className="skills" id="skills">
       <div className="container">
-        <h2 className="section-title reveal">My Skills</h2>
+        <h2 className="section-title reveal"><span className="text-gradient">My Skills</span></h2>
+
 
         <div className="skills-columns">
           {/* Primary Skills */}
