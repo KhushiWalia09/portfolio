@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 import "./Hero.css";
 
 function Hero() {
@@ -115,21 +116,112 @@ function Hero() {
     };
   }, []);
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.3,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
+
+  const buttonVariants = {
+    hidden: { scale: 0.8, opacity: 0 },
+    visible: {
+      scale: 1,
+      opacity: 1,
+      transition: { duration: 0.4 },
+    },
+    hover: { 
+      scale: 1.05,
+      transition: { duration: 0.2 }
+    },
+    tap: { scale: 0.95 }
+  };
+
+  const photoVariants = {
+    hidden: { scale: 0.8, opacity: 0 },
+    visible: {
+      scale: 1,
+      opacity: 1,
+      transition: { duration: 1, ease: "easeOut" },
+    },
+  };
+
   return (
     <section className="hero" id="hero">
       <canvas ref={canvasRef} className="particle-canvas"></canvas>
-      <div className="hero-content">
-        <h1 className="hero-title">
-          <span className="greeting">Hi, I'm </span>
-          <span className="name">Khushi Walia</span>
-        </h1>
-        <p className="hero-subtitle"><b>BCA Student | Aspiring Web Developer</b></p>
+      <div className="container hero-container">
+        <motion.div 
+          className="hero-content"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          <motion.h1 className="hero-title" variants={itemVariants}>
+            <span className="greeting">Crafting Digital Experiences</span>
+            <span className="name">Khushi Walia</span>
+          </motion.h1>
+          <motion.p className="hero-subtitle" variants={itemVariants}>
+            Full-Stack Developer Specializing in <b>Modern Web Applications</b> & <b>Intelligent Solutions</b>.
+          </motion.p>
 
-        <div className="hero-buttons">
-          <a href="#projects" className="btn primary">View Projects</a>
-          <a href="#contact" className="btn secondary">Contact Me</a>
-          <a href="#about" className="btn third">About Me</a>
-        </div>
+          <motion.div className="hero-buttons" variants={itemVariants}>
+            <motion.a 
+              href="#projects" 
+              className="btn primary"
+              variants={buttonVariants}
+              whileHover="hover"
+              whileTap="tap"
+            >
+              Explore My Work
+            </motion.a>
+            <motion.a 
+              href="#contact" 
+              className="btn secondary"
+              variants={buttonVariants}
+              whileHover="hover"
+              whileTap="tap"
+            >
+              Get In Touch
+            </motion.a>
+            <motion.a 
+              href="/resume.pdf" 
+              className="btn outline"
+              variants={buttonVariants}
+              whileHover="hover"
+              whileTap="tap"
+              target="_blank"
+            >
+              Download CV
+            </motion.a>
+          </motion.div>
+        </motion.div>
+
+        <motion.div 
+          className="hero-image-container"
+          variants={photoVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          <div className="profile-wrapper glass-card">
+            <div className="profile-placeholder">
+              {/* Profile image placeholder */}
+              <div className="glow-effect"></div>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

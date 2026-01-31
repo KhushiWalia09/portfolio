@@ -64,31 +64,9 @@ function App() {
 
     sections.forEach((section) => navObserver.observe(section));
 
-    // Scroll-reveal animation observer
-    const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
-    
-    const revealObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('active');
-            // Optional: unobserve after revealing (one-time animation)
-            // revealObserver.unobserve(entry.target);
-          }
-        });
-      },
-      { 
-        threshold: 0.15,  // Trigger when 15% of element is visible
-        rootMargin: '0px 0px -50px 0px'  // Trigger slightly before element enters viewport
-      }
-    );
-
-    revealElements.forEach((element) => revealObserver.observe(element));
-
     // Cleanup
     return () => {
       navObserver.disconnect();
-      revealObserver.disconnect();
       document.body.style.overflow = "";
       document.documentElement.style.overflow = "";
     };

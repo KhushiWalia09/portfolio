@@ -1,35 +1,29 @@
 :root {
   --primary: #6366f1;
-  --primary-hover: #4f46e5;
-  --secondary: #ec4899;
-  --accent: #8b5cf6;
-  --background: #020617;
-  --card-bg: rgba(255, 255, 255, 0.05);
-  --glass-border: rgba(255, 255, 255, 0.1);
-  --text-main: #f8fafc;
-  --text-muted: #94a3b8;
+  --primary-glow: rgba(99, 102, 241, 0.5);
+  --secondary: #a855f7;
+  --accent: #ec4899;
+  --background: #030712;
+  --card-bg: rgba(17, 24, 39, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --text-main: #f9fafb;
+  --text-muted: #9ca3af;
   --font-heading: 'Outfit', sans-serif;
   --font-body: 'Inter', sans-serif;
-  --glass-blur: blur(12px);
+  --glass-blur: blur(16px);
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --container-max: 1200px;
 }
 
 [data-theme="light"] {
   --primary: #4f46e5;
-  --primary-hover: #4338ca;
-  --secondary: #db2777;
-  --accent: #7c3aed;
-  --background: #f8fafc;
-  --card-bg: rgba(255, 255, 255, 0.7);
-  --glass-border: rgba(0, 0, 0, 0.05);
-  --text-main: #0f172a;
-  --text-muted: #475569;
-  --glass-blur: blur(8px);
-}
-
-html {
-  scroll-behavior: smooth;
-  overflow-x: hidden;
+  --primary-glow: rgba(79, 70, 229, 0.3);
+  --background: #fdfdfd;
+  --card-bg: rgba(255, 255, 255, 0.8);
+  --glass-border: rgba(0, 0, 0, 0.06);
+  --text-main: #111827;
+  --text-muted: #4b5563;
+  --glass-blur: blur(10px);
 }
 
 * {
@@ -37,7 +31,6 @@ html {
   padding: 0;
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
@@ -46,13 +39,21 @@ body {
   color: var(--text-main);
   line-height: 1.6;
   overflow-x: hidden;
-  transition: var(--transition);
+  transition: background-color 0.5s ease;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4 {
   font-family: var(--font-heading);
-  color: var(--text-main);
-  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .glass-card {
@@ -60,15 +61,7 @@ h1, h2, h3, h4, h5, h6 {
   backdrop-filter: var(--glass-blur);
   -webkit-backdrop-filter: var(--glass-blur);
   border: 1px solid var(--glass-border);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  transition: var(--transition);
-}
-
-.glass-card:hover {
-  transform: translateY(-5px);
-  border-color: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
 }
 
 .text-gradient {
@@ -79,197 +72,21 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 section {
-  padding: 80px 20px;
-  position: relative;
+  padding: 100px 0;
 }
 
 .section-title {
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 5vw, 3rem);
   text-align: center;
-  margin-bottom: 50px;
-  letter-spacing: -0.02em;
+  margin-bottom: 60px;
+  font-weight: 800;
 }
+
+/* Animations are now handled via Framer Motion */
+/* Cleaned up legacy reveal classes */
 
 @media (max-width: 768px) {
   section {
-    padding: 60px 15px;
-  }
-}
-
-header {
-  background-color: #222;
-  color: white;
-  padding: 15px;
-  text-align: center;
-  /* Smooth header transitions */
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-main {
-  padding: 40px;
-  min-height: 70vh;
-}
-
-footer {
-  background-color: #eee;
-  text-align: center;
-  padding: 10px;
-}
-
-nav a {
-  color: white;
-  margin: 0 10px;
-  text-decoration: none;
-  /* Smooth link transitions */
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-}
-
-nav a::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background-color: white;
-  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-nav a:hover::after {
-  width: 100%;
-}
-
-nav a:hover {
-  transform: translateY(-2px);
-}
-
-/* Smooth scroll snap for better UX (optional) */
-@media (prefers-reduced-motion: no-preference) {
-  html {
-    scroll-behavior: smooth;
-  }
-}
-
-/* Respect user's motion preferences */
-@media (prefers-reduced-motion: reduce) {
-
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-}
-
-
-/* ============================================
-   SCROLL REVEAL ANIMATIONS
-   ============================================ */
-
-/* Base state for reveal elements - hidden by default */
-.reveal {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
-    transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* Active state when element is visible */
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Stagger animation for child elements */
-.reveal.active>* {
-  animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) backwards;
-}
-
-.reveal.active>*:nth-child(1) {
-  animation-delay: 0.1s;
-}
-
-.reveal.active>*:nth-child(2) {
-  animation-delay: 0.2s;
-}
-
-.reveal.active>*:nth-child(3) {
-  animation-delay: 0.3s;
-}
-
-.reveal.active>*:nth-child(4) {
-  animation-delay: 0.4s;
-}
-
-.reveal.active>*:nth-child(5) {
-  animation-delay: 0.5s;
-}
-
-.reveal.active>*:nth-child(6) {
-  animation-delay: 0.6s;
-}
-
-/* Fade in up animation */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Alternative reveal styles for variety */
-.reveal-left {
-  opacity: 0;
-  transform: translateX(-50px);
-  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
-    transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.reveal-left.active {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-.reveal-right {
-  opacity: 0;
-  transform: translateX(50px);
-  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
-    transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.reveal-right.active {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-.reveal-scale {
-  opacity: 0;
-  transform: scale(0.9);
-  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
-    transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.reveal-scale.active {
-  opacity: 1;
-  transform: scale(1);
-}
-
-/* Respect reduced motion preferences */
-@media (prefers-reduced-motion: reduce) {
-
-  .reveal,
-  .reveal-left,
-  .reveal-right,
-  .reveal-scale {
-    opacity: 1;
-    transform: none;
-    transition: none;
+    padding: 80px 0;
   }
 }

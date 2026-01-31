@@ -1,14 +1,29 @@
+import { motion } from "framer-motion";
 import "./Experience.css";
 
 function Experience() {
   return (
     <section className="experience" id="experience">
-      <h2 className="section-title"><span className="text-gradient">Experience</span></h2>
+      <motion.h2 
+        className="section-title"
+        initial={{ y: 20, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
+        <span className="text-gradient">Experience</span>
+      </motion.h2>
 
       <div className="experience-wrapper">
         <div className="experience-line"></div>
 
-        <div className="experience-card glass-card reveal">
+        <motion.div 
+          className="experience-card glass-card"
+          initial={{ x: -50, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true, amount: 0.2 }}
+        >
 
           <span className="experience-dot"></span>
 
@@ -60,7 +75,7 @@ function Experience() {
           <span className="experience-tech">
             Digital Literacy • Documentation • Communication
           </span>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -1,9 +1,17 @@
+import { motion } from "framer-motion";
 import "./About.css";
 
 function About() {
   return (
     <section className="about-section" id="about">
-      <div className="about-container reveal glass-card" style={{ padding: '3rem' }}>
+      <motion.div 
+        className="about-container glass-card" 
+        style={{ padding: '3rem' }}
+        initial={{ y: 50, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true, amount: 0.2 }}
+      >
         <h2 className="section-title"><span className="text-gradient">About Me</span></h2>
 
         <p className="about-text">
@@ -20,7 +28,7 @@ function About() {
           growing as a developer. This portfolio reflects my journey, learning,
           and love for building things that feel meaningful.
         </p>
-      </div>
+      </motion.div>
     </section>
 
   );

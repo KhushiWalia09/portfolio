@@ -1,0 +1,10 @@
+/* ParticlesBG.css */
+#tsparticles canvas {
+    display: block;
+    background-color: transparent;
+}
+
+/* Ensure particles are visible but subtle in light mode without muddying colors */
+[data-theme="light"] #tsparticles canvas {
+    opacity: 0.8;
+}
