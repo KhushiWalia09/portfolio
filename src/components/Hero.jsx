@@ -197,7 +197,7 @@ function Hero() {
               Get In Touch
             </motion.a>
             <motion.a 
-              href="/resume.pdf" 
+              href="/Resume.pdf" 
               className="btn outline"
               variants={buttonVariants}
               whileHover="hover"
