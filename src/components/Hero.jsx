@@ -199,7 +199,7 @@ function Hero() {
             </motion.a>
             <motion.a 
               href="/Resume.pdf" 
-              className="btn outline"
+              className="btn secondary"
               variants={buttonVariants}
               whileHover="hover"
               whileTap="tap"
