@@ -81,7 +81,7 @@ function Contact() {
                 <div className="method-content">
                   <h4>LinkedIn</h4>
                   <a
-                    href="https://linkedin.com/in/khushi"
+                    href="https://www.linkedin.com/in/khushiwalia99/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
