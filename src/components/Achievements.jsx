@@ -78,6 +78,7 @@ function Achievements() {
           onMouseLeave={handleMouseLeave}
           variants={cardVariants}
         >
+          <div className="project-badge">May - July 2025</div>
           <h3>Internship Completion</h3>
           <p>
             Successfully completed internship at{" "}
@@ -92,39 +93,14 @@ function Achievements() {
           onMouseLeave={handleMouseLeave}
           variants={cardVariants}
         >
-          <h3>Advanced Java Project</h3>
-          <p>
-            Designed and developed an{" "}
-            <strong>Event Management System</strong> using Java Swing and OOP
-            concepts.
-          </p>
-        </motion.div>
-
-        <motion.div
-          className="achievement-card glass-card"
-          onMouseMove={handleMouseMove}
-          onMouseLeave={handleMouseLeave}
-          variants={cardVariants}
-        >
-          <h3>Poster-making Competition</h3>
+          <div className="project-badge">College Activities</div>
+          <h3>Poster-making Competitions</h3>
           <p>
             Actively participated in various poster-making competitions,
             demonstrating creativity and design skills.
           </p>
         </motion.div>
 
-        <motion.div
-          className="achievement-card glass-card"
-          onMouseMove={handleMouseMove}
-          onMouseLeave={handleMouseLeave}
-          variants={cardVariants}
-        >
-          <h3>Continuous Learning</h3>
-          <p>
-            Actively improving skills in React, JavaScript, and modern web
-            development through hands-on projects.
-          </p>
-        </motion.div>
       </motion.div>
     </section>
   );

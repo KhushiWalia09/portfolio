@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import "./Hero.css";
+import profileImg from "../assets/profile.jpg";
 
 function Hero() {
   const canvasRef = useRef(null);
@@ -216,10 +217,8 @@ function Hero() {
           animate="visible"
         >
           <div className="profile-wrapper glass-card">
-            <div className="profile-placeholder">
-              {/* Profile image placeholder */}
-              <div className="glow-effect"></div>
-            </div>
+            <img src={profileImg} alt="Khushi Walia" className="profile-image" />
+            <div className="glow-effect"></div>
           </div>
         </motion.div>
       </div>
