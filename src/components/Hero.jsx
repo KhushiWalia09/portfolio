@@ -198,7 +198,7 @@ function Hero() {
               Get In Touch
             </motion.a>
             <motion.a 
-              href="/Khushi_Walia_Resume.pdf" 
+              href="/Khushi's Resume.pdf"
               className="btn secondary"
               variants={buttonVariants}
               whileHover="hover"
