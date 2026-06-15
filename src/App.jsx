@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import About from "./components/About";
+import Education from "./components/Education";
 import Experience from "./components/Experience";
 import Achievements from "./components/Achievements";
 import Skills from "./components/Skills";
@@ -81,6 +82,7 @@ function App() {
       <Header toggleTheme={toggleTheme} theme={theme} />
       <Hero />
       <About />
+      <Education />
       <Experience />
       <Achievements />
       <Skills />

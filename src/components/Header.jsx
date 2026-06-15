@@ -31,6 +31,9 @@ function Header({ toggleTheme, theme }) {
         <a href="#about" data-link="about" onClick={closeMenu}>
           About
         </a>
+        <a href="#education" data-link="education" onClick={closeMenu}>
+          Education
+        </a>
         <a href="#experience" data-link="experience" onClick={closeMenu}>
           Experience
         </a>

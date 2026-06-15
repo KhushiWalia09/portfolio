@@ -63,7 +63,10 @@ function Hero() {
 
       draw() {
         const theme = document.documentElement.getAttribute("data-theme");
-        ctx.fillStyle = theme === "light" ? "rgba(79, 70, 229, 0.3)" : "rgba(255, 255, 255, 0.3)";
+        ctx.fillStyle =
+          theme === "light"
+            ? "rgba(79, 70, 229, 0.3)"
+            : "rgba(255, 255, 255, 0.3)";
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         ctx.fill();
@@ -73,7 +76,7 @@ function Hero() {
     const particles = [];
     const particleCount = 80;
     for (let i = 0; i < particleCount; i++) {
-        particles.push(new Particle());
+      particles.push(new Particle());
     }
 
     // Animation loop
@@ -81,27 +84,27 @@ function Hero() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       particles.forEach((particle, index) => {
-          particle.update();
-          particle.draw();
+        particle.update();
+        particle.draw();
 
-          // Connect particles
-          for (let j = index + 1; j < particles.length; j++) {
-              const p2 = particles[j];
-              const dx = particle.x - p2.x;
-              const dy = particle.y - p2.y;
-              const distance = Math.sqrt(dx * dx + dy * dy);
+        // Connect particles
+        for (let j = index + 1; j < particles.length; j++) {
+          const p2 = particles[j];
+          const dx = particle.x - p2.x;
+          const dy = particle.y - p2.y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
 
-              if (distance < 120) {
-                  const theme = document.documentElement.getAttribute("data-theme");
-                  const color = theme === "light" ? "79, 70, 229" : "255, 255, 255";
-                  ctx.beginPath();
-                  ctx.strokeStyle = `rgba(${color}, ${0.2 - distance / 600})`; 
-                  ctx.lineWidth = 0.5;
-                  ctx.moveTo(particle.x, particle.y);
-                  ctx.lineTo(p2.x, p2.y);
-                  ctx.stroke();
-              }
+          if (distance < 120) {
+            const theme = document.documentElement.getAttribute("data-theme");
+            const color = theme === "light" ? "79, 70, 229" : "255, 255, 255";
+            ctx.beginPath();
+            ctx.strokeStyle = `rgba(${color}, ${0.2 - distance / 600})`;
+            ctx.lineWidth = 0.5;
+            ctx.moveTo(particle.x, particle.y);
+            ctx.lineTo(p2.x, p2.y);
+            ctx.stroke();
           }
+        }
       });
 
       animationFrameId = requestAnimationFrame(animate);
@@ -144,11 +147,11 @@ function Hero() {
       opacity: 1,
       transition: { duration: 0.4 },
     },
-    hover: { 
+    hover: {
       scale: 1.05,
-      transition: { duration: 0.2 }
+      transition: { duration: 0.2 },
     },
-    tap: { scale: 0.95 }
+    tap: { scale: 0.95 },
   };
 
   const photoVariants = {
@@ -164,7 +167,7 @@ function Hero() {
     <section className="hero" id="hero">
       <canvas ref={canvasRef} className="particle-canvas"></canvas>
       <div className="container hero-container">
-        <motion.div 
+        <motion.div
           className="hero-content"
           variants={containerVariants}
           initial="hidden"
@@ -175,12 +178,12 @@ function Hero() {
             <span className="name">Khushi Walia</span>
           </motion.h1>
           <motion.p className="hero-subtitle" variants={itemVariants}>
-            Full-Stack Developer Specializing in <b>Modern Web Applications</b> & <b>Intelligent Solutions</b>.
+            BCA Student & <b>Aspiring Software Developer</b>, passionate about web development, problem-solving, and continuous learning.
           </motion.p>
 
           <motion.div className="hero-buttons" variants={itemVariants}>
-            <motion.a 
-              href="#projects" 
+            <motion.a
+              href="#projects"
               className="btn primary"
               variants={buttonVariants}
               whileHover="hover"
@@ -188,8 +191,8 @@ function Hero() {
             >
               Explore My Work
             </motion.a>
-            <motion.a 
-              href="#contact" 
+            <motion.a
+              href="#contact"
               className="btn secondary"
               variants={buttonVariants}
               whileHover="hover"
@@ -197,7 +200,7 @@ function Hero() {
             >
               Get In Touch
             </motion.a>
-            <motion.a 
+            <motion.a
               href="/Khushi's Resume.pdf"
               className="btn secondary"
               variants={buttonVariants}
@@ -210,14 +213,18 @@ function Hero() {
           </motion.div>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           className="hero-image-container"
           variants={photoVariants}
           initial="hidden"
           animate="visible"
         >
           <div className="profile-wrapper glass-card">
-            <img src={profileImg} alt="Khushi Walia" className="profile-image" />
+            <img
+              src={profileImg}
+              alt="Khushi Walia"
+              className="profile-image"
+            />
             <div className="glow-effect"></div>
           </div>
         </motion.div>

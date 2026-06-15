@@ -60,7 +60,7 @@ function Projects() {
         >
           <div className="project-badge">Web App</div>
           <h3>PrepEdge</h3>
-          <p>A high-performance interview preparation platform built with Python and Flask. Optimized for fast rendering and intuitive UX, helping students master technical concepts.</p>
+          <p>Developed a Flask-based interview preparation platform to help students practice technical concepts and interview questions. Implemented structured learning modules and user-friendly navigation.</p>
           <div className="project-tech">
             <span>Python</span>
             <span>Flask</span>
@@ -88,12 +88,12 @@ function Projects() {
         >
           <div className="project-badge">ML & Web</div>
           <h3>SmartCycle</h3>
-          <p>Predictive health analytics platform. Uses Machine Learning to forecast cycles with high accuracy. Integrated with Firebase for secure, real-time data persistence.</p>
+          <p>A web application designed to promote sustainable waste management and recycling awareness. Features user authentication, responsive design, and Firebase integration for data storage and user management.</p>
           <div className="project-tech">
-            <span>React</span>
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
             <span>Firebase</span>
-            <span>Python</span>
-            <span>ML</span>
           </div>
           <div className="project-links">
             <a

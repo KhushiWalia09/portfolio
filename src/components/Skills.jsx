@@ -3,9 +3,10 @@ import "./Skills.css";
 
 function Skills() {
   const skillCategories = [
-    { name: "Frontend", level: "Next.js, React, Tailwind, Framer Motion" },
-    { name: "Backend", level: "Node.js, Flask, PostgreSQL, Firebase" },
-    { name: "Dev Tools", level: "Git, Docker, AWS, Postman" },
+    { name: "Frontend", level: "HTML5, CSS3, JavaScript, React, Responsive Design" },
+    { name: "Programming", level: "Python, Java"},
+    { name: "Backend & Databases", level: "Flask, Firebase, MySQL" },
+    { name: "Tools", level: "Git, GitHub, VS Code, MS Excel" },
   ];
 
   const containerVariants = {
