@@ -29,7 +29,7 @@ function Education() {
           <h3>Bachelor of Computer Applications (BCA)</h3>
           <div class="education-info">
             <h4>The Northcap University</h4>
-            <span><i><b>2023 - 2026</b></i></span>
+            <span><i><b>2023-2026</b></i></span>
           </div>
 
           <p>

@@ -1,0 +1,152 @@
+.seeking-section {
+  position: relative;
+  background: var(--background);
+  color: var(--text-main);
+  padding: 80px 0;
+  overflow: hidden;
+}
+
+.seeking-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.subtitle-badge {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 10px;
+  background: rgba(99, 102, 241, 0.1);
+  padding: 6px 16px;
+  border-radius: 50px;
+  border: 1px solid rgba(99, 102, 241, 0.15);
+}
+
+.seeking-section .section-title {
+  margin-bottom: 0;
+}
+
+.seeking-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 50px;
+}
+
+.seeking-card {
+  position: relative;
+  padding: 2.5rem 2rem;
+  border-radius: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  overflow: hidden;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Custom card glow effect on hover */
+.seeking-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(800px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(99, 102, 241, 0.1) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.seeking-card:hover::before {
+  opacity: 1;
+}
+
+.seeking-card:hover {
+  border-color: rgba(99, 102, 241, 0.3);
+  box-shadow: 0 15px 35px -10px rgba(99, 102, 241, 0.15);
+}
+
+.icon-wrapper {
+  position: relative;
+  z-index: 2;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(168, 85, 247, 0.1));
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.seeking-card:hover .icon-wrapper {
+  transform: rotateY(360deg);
+  color: var(--secondary);
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.15), rgba(236, 72, 153, 0.15));
+  border-color: rgba(168, 85, 247, 0.3);
+}
+
+.opt-icon {
+  width: 28px;
+  height: 28px;
+}
+
+.seeking-card h3 {
+  position: relative;
+  z-index: 2;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.seeking-card p {
+  position: relative;
+  z-index: 2;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.seeking-cta {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.seeking-cta p {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* Responsiveness */
+@media (max-width: 992px) {
+  .seeking-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .seeking-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .seeking-card {
+    padding: 2rem 1.5rem;
+  }
+}

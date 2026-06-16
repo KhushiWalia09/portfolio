@@ -1,9 +1,9 @@
-.achievements {
+.highlights {
   padding: 80px 20px;
   background: var(--background);
 }
 
-.achievement-list {
+.highlights-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
@@ -11,7 +11,7 @@
   margin: 0 auto;
 }
 
-.achievement-card {
+.highlights-card {
   padding: 2.5rem 2rem;
   display: flex;
   flex-direction: column;
@@ -23,11 +23,11 @@
   cursor: pointer;
 }
 
-.achievement-card:hover {
+.highlights-card:hover {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
 
-.achievement-card::after {
+.highlights-card::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -39,18 +39,19 @@
   pointer-events: none;
 }
 
-.achievement-card:hover::after {
+.highlights-card:hover::after {
   opacity: 1;
 }
 
-.achievement-card h3 {
+.highlights-card h3 {
   font-size: 1.4rem;
+  margin-top: 0.9rem;
   color: var(--primary);
   font-weight: 700;
   transform: translateZ(20px);
 }
 
-.achievement-card p {
+.highlights-card p {
   color: var(--text-muted);
   line-height: 1.7;
   transform: translateZ(10px);
@@ -58,7 +59,7 @@
 
 
 @media (max-width: 768px) {
-  .achievement-list {
+  .highlights-list {
     grid-template-columns: 1fr;
   }
 }

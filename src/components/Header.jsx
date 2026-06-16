@@ -37,8 +37,8 @@ function Header({ toggleTheme, theme }) {
         <a href="#experience" data-link="experience" onClick={closeMenu}>
           Experience
         </a>
-        <a href="#achievements" data-link="achievements" onClick={closeMenu}>
-          Achievements
+        <a href="#highlights" data-link="highlights" onClick={closeMenu}>
+          Highlights
         </a>
         <a href="#skills" data-link="skills" onClick={closeMenu}>
           Skills

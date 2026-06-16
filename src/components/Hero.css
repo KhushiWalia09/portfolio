@@ -1,6 +1,6 @@
 .hero {
   position: relative;
-  min-height: 100vh;
+  min-height: 115vh;
   display: flex;
   align-items: center;
   background: var(--background);
@@ -51,6 +51,7 @@
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin-bottom: 0.75rem;
+  margin-top: -0.1rem;
 }
 
 .hero-title .name {
