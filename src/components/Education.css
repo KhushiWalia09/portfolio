@@ -9,14 +9,19 @@
   margin: 0 auto;
 }
 
-.education-info {
-    display: flex;
-    align-items: center;
-    gap: 104px;
+.education-info-new {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.1rem;
+  color: var(--primary);
+  font-weight: 600;
+  margin-bottom: 1.25rem;
 }
-.education-info h4 {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
+
+.education-divider {
+  color: var(--text-muted);
+  opacity: 0.4;
 }
 
 .education-line {
@@ -33,6 +38,13 @@
   padding: 2.5rem;
   margin-bottom: 2rem;
   position: relative;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.education-card:hover {
+  transform: translateY(-6px) scale(1.01);
+  border-color: rgba(99, 102, 241, 0.25);
+  box-shadow: 0 20px 40px -15px rgba(99, 102, 241, 0.25);
 }
 
 .education-dot {
@@ -44,6 +56,13 @@
   background: var(--primary);
   border-radius: 50%;
   box-shadow: 0 0 10px var(--primary);
+  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.education-card:hover .education-dot {
+  background: var(--secondary);
+  box-shadow: 0 0 15px var(--secondary);
+  transform: scale(1.2);
 }
 
 .education-card h3 {
@@ -52,22 +71,50 @@
   margin-bottom: 0.5rem;
 }
 
-.education-duration {
-  display: block;
-  font-size: 0.9rem;
-  color: var(--primary);
-  font-weight: 600;
-  margin-bottom: 1.5rem;
-}
-
-.education-card p,
-.education-card li {
+.education-desc {
   color: var(--text-muted);
+  font-size: 1.05rem;
   line-height: 1.7;
+  margin-bottom: 2rem;
 }
 
-.education-card ul {
-  margin: 1rem 0 1.5rem 1.5rem;
+.education-details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  text-align: left;
+}
+
+.details-col h4 {
+  font-size: 1.15rem;
+  color: var(--text-main);
+  margin-bottom: 1rem;
+  font-weight: 700;
+  border-left: 3px solid var(--primary);
+  padding-left: 10px;
+}
+
+.details-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.details-col li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.details-col li::before {
+  content: "✦";
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-size: 0.85rem;
 }
 
 @media (max-width: 768px) {
@@ -83,5 +130,22 @@
 
   .education-card {
     padding: 1.5rem;
+  }
+
+  .education-info-new {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  .education-divider {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .education-details-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 }

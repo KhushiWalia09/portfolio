@@ -27,21 +27,33 @@ function Education() {
           <span className="education-dot"></span>
 
           <h3>Bachelor of Computer Applications (BCA)</h3>
-          <div class="education-info">
-            <h4>The Northcap University</h4>
-            <span><i><b>2023-2026</b></i></span>
+          <div className="education-info-new">
+            <span className="education-uni">The NorthCap University</span>
+            <span className="education-divider">|</span>
+            <span className="education-duration-new">2023–2026</span>
           </div>
 
-          <p>
-            <h4>Relevant coursework: </h4>
-            <li>Web Development</li>
-            <li>MySQL</li>
-            <li>Data Structures</li>
-            <li>Algorithms</li>
-            <li>Database Management Systems</li>
-            <li>Software Engineering</li>
-            <li>Object-Oriented Programming</li>
-          </p>
+          <div className="education-details-grid">
+            <div className="details-col">
+              <h4>Core Subjects</h4>
+              <ul>
+                <li>Web Development</li>
+                <li>DBMS</li>
+                <li>DSA</li>
+                <li>OOP</li>
+                <li>Software Engineering</li>
+              </ul>
+            </div>
+            <div className="details-col">
+              <h4>Creative Subjects</h4>
+              <ul>
+                <li>Stop-Motion Animation</li>
+                <li>VFX Production Pipeline</li>
+                <li>Rotopaint</li>
+                <li>Game testing</li>
+              </ul>
+            </div>
+          </div>
         </motion.div>
       </div>
     </section>
