@@ -31,6 +31,8 @@ function Education() {
             <span className="education-uni">The NorthCap University</span>
             <span className="education-divider">|</span>
             <span className="education-duration-new">2023–2026</span>
+            <span className="education-divider">|</span>
+            <span className="education-grade">Recent CGPA: 8.35 / 10</span>
           </div>
 
           <div className="education-details-grid">

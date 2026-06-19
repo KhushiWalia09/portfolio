@@ -16,62 +16,86 @@ function Projects() {
       title: "PrepEdge",
       badge: "Web App",
       image: prepedgeImg,
-      summary: "Developed a Flask-based interview preparation platform to help students practice technical concepts and interview questions. Implemented structured learning modules and user-friendly navigation.",
+      summary:
+        "Developed a Flask-based interview preparation platform to help students practice technical concepts and interview questions. Implemented structured learning modules and user-friendly navigation.",
       tech: ["Python", "Flask", "Jinja2"],
       links: [
-        { text: "Live Demo", url: "https://prepedge-ivev.onrender.com", primary: true }
+        {
+          text: "Live Demo",
+          url: "https://prepedge-ivev.onrender.com",
+          primary: true,
+        },
       ],
       details: {
-        problem: "University students lack a unified, structured platform to practice core computer science topics (like OOP, DBMS, and DSA) alongside practical web concepts in a consolidated prep guide.",
+        problem:
+          "University students lack a unified, structured platform to practice core computer science topics (like OOP, DBMS, and DSA) alongside practical web concepts in a consolidated prep guide.",
         role: "Full-Stack Developer. Set up the Python Flask routing, designed HTML/Jinja2 responsive layouts, and integrated practice roadmaps.",
-        challenges: "Structuring learning hierarchies to offer incremental difficulty, and deploying the platform to Render with optimal cold-start loading times.",
+        challenges:
+          "Structuring learning hierarchies to offer incremental difficulty, and deploying the platform to Render with optimal cold-start loading times.",
         metrics: [
           "Successfully launched with 50+ hand-picked interview preparation questions.",
           "Reduced navigation onboarding friction for student preparation.",
-          "Highly responsive templates rendering correctly on all device widths."
-        ]
-      }
+          "Highly responsive templates rendering correctly on all device widths.",
+        ],
+      },
     },
     {
       title: "SmartCycle",
       badge: "ML & Web",
       image: smartcycleImg,
-      summary: "A web application designed to promote sustainable waste management and recycling awareness. Features user authentication, responsive design, and Firebase integration for data storage.",
+      summary:
+        "A web application designed to promote sustainable waste management and recycling awareness. Features user authentication, responsive design, and Firebase integration for data storage.",
       tech: ["HTML", "CSS", "JavaScript", "Firebase"],
       links: [
-        { text: "Live Demo", url: "https://smartcyclee.netlify.app/", primary: true }
+        {
+          text: "Live Demo",
+          url: "https://smartcyclee.netlify.app/",
+          primary: true,
+        },
       ],
       details: {
-        problem: "A lack of local recycling center visibility and user rewards programs prevents communities from engaging in consistent, proper waste sorting and green habits.",
+        problem:
+          "A lack of local recycling center visibility and user rewards programs prevents communities from engaging in consistent, proper waste sorting and green habits.",
         role: "Frontend Developer & Firebase Integrator. Designed user profile dashboards, integrated real-time location database fetch, and implemented user authentication.",
-        challenges: "Handling asynchronous read/write states for dynamic crowd-sourced locations while keeping the page layout responsive and lag-free.",
+        challenges:
+          "Handling asynchronous read/write states for dynamic crowd-sourced locations while keeping the page layout responsive and lag-free.",
         metrics: [
           "Successfully indexed and visualized 20+ verified local recycling centers.",
           "Integrated secure email/password user authentication using Firebase.",
-          "Page load speed under 1.2s via optimized static asset loading."
-        ]
-      }
+          "Page load speed under 1.2s via optimized static asset loading.",
+        ],
+      },
     },
     {
       title: "The Divine Drift",
       badge: "Graphics & Gaming",
       image: divineDriftImg,
-      summary: "An immersive 2D browser game utilizing HTML5 Canvas API. Features complex collision detection, particle systems, and dynamic audio-visual feedback loops.",
+      summary:
+        "An immersive 2D browser game utilizing HTML5 Canvas API. Features complex collision detection, particle systems, and dynamic audio-visual feedback loops.",
       tech: ["JavaScript", "Canvas", "AudioAPI"],
       links: [
-        { text: "Play Game", url: "https://divine-drift.vercel.app/", primary: true },
-        { text: "GitHub", url: "https://github.com/KhushiWalia09/Divine-Drift.git" }
+        {
+          text: "Play Game",
+          url: "https://divine-drift.vercel.app/",
+          primary: true,
+        },
+        {
+          text: "GitHub",
+          url: "https://github.com/KhushiWalia09/Divine-Drift.git",
+        },
       ],
       details: {
-        problem: "Many browser-based games are heavy to download, lag on mobile screens, and suffer from imprecise collision detectors that ruin high-speed gameplay.",
+        problem:
+          "Many browser-based games are heavy to download, lag on mobile screens, and suffer from imprecise collision detectors that ruin high-speed gameplay.",
         role: "Creator & Physics Programmer. Developed the custom rigid-body collision algorithm, canvas render pipeline, and particle generator without external physics engines.",
-        challenges: "Maintaining frame-rate independent physics loops at 60 FPS while rendering hundreds of active particles during explosions.",
+        challenges:
+          "Maintaining frame-rate independent physics loops at 60 FPS while rendering hundreds of active particles during explosions.",
         metrics: [
           "Maintained a stable 60 FPS across desktop and high-end mobile screens.",
           "Zero dependencies: built purely on vanilla JavaScript and Canvas API.",
-          "Extremely light payload: entire game bundle loads in less than 2MB."
-        ]
-      }
+          "Extremely light payload: entire game bundle loads in less than 2MB.",
+        ],
+      },
     },
   ];
 
@@ -96,7 +120,7 @@ function Projects() {
 
   return (
     <section className="projects" id="projects">
-      <motion.h2 
+      <motion.h2
         className="section-title"
         initial={{ y: 20, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
@@ -106,7 +130,7 @@ function Projects() {
         <span className="text-gradient">Projects</span>
       </motion.h2>
 
-      <motion.div 
+      <motion.div
         className="projects-grid"
         variants={containerVariants}
         initial="hidden"
@@ -114,14 +138,24 @@ function Projects() {
         viewport={{ once: true, amount: 0.1 }}
       >
         {projectsData.map((project, index) => (
-          <motion.div 
+          <motion.div
             key={index}
             className="project-card glass-card"
             variants={cardVariants}
             whileHover={{ y: -10, transition: { duration: 0.3 } }}
           >
             <div className="project-image-container">
-              <img src={project.image} alt={project.title} className="project-image" />
+              <img
+                src={project.image}
+                alt={project.title}
+                className={`project-image ${
+                  project.title === "SmartCycle"
+                    ? "smartcycle-image"
+                    : project.title === "The Divine Drift"
+                      ? "divine-drift-image"
+                      : ""
+                }`}
+              />
             </div>
             <div className="project-badge">{project.badge}</div>
             <h3>{project.title}</h3>
@@ -157,14 +191,14 @@ function Projects() {
       {/* Case Study Modal Popup */}
       <AnimatePresence>
         {activeCaseStudy && (
-          <motion.div 
+          <motion.div
             className="modal-overlay"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setActiveCaseStudy(null)}
           >
-            <motion.div 
+            <motion.div
               className="modal-card glass-card"
               initial={{ y: 50, scale: 0.9, opacity: 0 }}
               animate={{ y: 0, scale: 1, opacity: 1 }}
@@ -172,9 +206,9 @@ function Projects() {
               transition={{ type: "spring", duration: 0.5 }}
               onClick={(e) => e.stopPropagation()}
             >
-              <button 
-                className="modal-close" 
-                onClick={() => setActiveCaseStudy(null)} 
+              <button
+                className="modal-close"
+                onClick={() => setActiveCaseStudy(null)}
                 aria-label="Close case study modal"
               >
                 &times;
@@ -182,7 +216,11 @@ function Projects() {
 
               <div className="modal-header">
                 <div className="modal-image-container">
-                  <img src={activeCaseStudy.image} alt={activeCaseStudy.title} className="modal-image" />
+                  <img
+                    src={activeCaseStudy.image}
+                    alt={activeCaseStudy.title}
+                    className="modal-image"
+                  />
                 </div>
                 <span className="project-badge">{activeCaseStudy.badge}</span>
                 <h3>{activeCaseStudy.title}</h3>

@@ -15,7 +15,7 @@ function Skills() {
     {
       name: "Programming",
       skills: [
-        { name: "Python", level: "Advanced" },
+        { name: "Python", level: "Intermediate" },
         { name: "Java", level: "Intermediate" }
       ]
     },

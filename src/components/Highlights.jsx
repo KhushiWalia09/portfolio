@@ -79,7 +79,9 @@ function Highlights() {
           <div className="project-badge">Leadership</div>
           <h3>Digital Educator</h3>
           <p>
-            Taught programming basics, MS Office, and digital literacy to 50+ underprivileged students at Sanshil Foundation, enhancing community technology education.
+            Taught programming basics, MS Office, and digital literacy to 50+
+            underprivileged students at Sanshil Foundation, enhancing community
+            technology education.
           </p>
         </motion.div>
 
@@ -90,9 +92,11 @@ function Highlights() {
           variants={cardVariants}
         >
           <div className="project-badge">Development</div>
-          <h3>Full-Stack Builder</h3>
+          <h3>Project Developer</h3>
           <p>
-            Successfully architected and deployed multiple desktop, web, and database applications, demonstrating versatile software engineering capabilities.
+            Built academic projects including SmartCycle, PrepEdge, Divine
+            Drift, and an Event Management System using Java, Python, Flask,
+            Firebase, and modern web technologies.
           </p>
         </motion.div>
 
@@ -103,9 +107,11 @@ function Highlights() {
           variants={cardVariants}
         >
           <div className="project-badge">Growth</div>
-          <h3>Active Study Track</h3>
+          <h3>Continuous Learner</h3>
           <p>
-            Dedicated to mastering advanced frontend optimization, TypeScript type safety, state management patterns, and modern cloud deployment architectures.
+            Actively expanding knowledge in web development, software
+            engineering, databases, and modern development tools through
+            hands-on projects and self-learning.
           </p>
         </motion.div>
 
@@ -118,7 +124,8 @@ function Highlights() {
           <div className="project-badge">Management</div>
           <h3>Operations & Support</h3>
           <p>
-            Coordinated NGO database operations, reporting, and event schedules, bridging organizational logistics with technical execution.
+            Coordinated NGO database operations, reporting, and event schedules,
+            bridging organizational logistics with technical execution.
           </p>
         </motion.div>
       </motion.div>

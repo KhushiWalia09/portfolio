@@ -46,13 +46,25 @@
   transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.smartcycle-image {
+  width: 155%;
+  height: 110%;
+  max-width: none;
+}
+
+.divine-drift-image {
+  width: 110%;
+  height: 200%;
+  max-width: none;
+}
+
 .project-card:hover .project-image {
   transform: scale(1.06);
 }
 
 .project-badge {
   position: absolute;
-  top: 1.5rem;
+  top: 0.5rem;
   right: 1.5rem;
   padding: 0.4rem 0.8rem;
   background: rgba(99, 102, 241, 0.1);
