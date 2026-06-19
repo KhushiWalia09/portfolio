@@ -17,19 +17,15 @@ function About() {
         </h2>
 
         <p className="about-text">
-          I am a recent{" "}
-          <strong>
-            BCA graduate from The NorthCap University (2023–2026){" "}
-          </strong>
-          with a passion for software development, web technologies, and
-          problem-solving. Through academic projects, I have gained practical
-          experience in Java, Python, Flask, Firebase, MySQL, HTML, CSS,
-          JavaScript, and React.<br/>Alongside my technical projects, I completed an
-          internship at Sanshil Foundation, where I contributed to digital
-          literacy initiatives, documentation, and community outreach programs.
-          <br/>I am currently seeking opportunities in Software Development, Web
-          Development, IT Support, and Technical Operations, while continuing to
-          learn and build impactful digital solutions.
+          My journey into Web development started with a curiosity about how the web functions, which quickly turned into a passion for writing clean, efficient code and building user-centric interfaces. As a BCA graduate from The NorthCap University, I focus on the intersection of structured logic and interactive design.
+        </p>
+
+        <p className="about-text">
+          I am driven by problem-solving—whether it's debugging a complex application state, building responsive frontend components, or designing relational databases. My goal is to build digital experiences that are not only performant and accessible but also meaningful for the end-user.
+        </p>
+
+        <p className="about-text">
+          Continuous growth is core to my mindset. Outside of my academic projects, I enjoy sharing my passion for technology by teaching programming basics and digital literacy to school students, which has helped hone my collaboration and technical communication skills.
         </p>
       </motion.div>
     </section>

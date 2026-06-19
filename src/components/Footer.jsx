@@ -3,7 +3,8 @@ import "./Footer.css";
 function Footer() {
   return (
     <footer className="footer">
-      <p>© 2025 Khushi Walia | Khushiwalia79@gmail.com</p>
+      <p>© 2026 Khushi Walia | khushiwalia79@gmail.com</p>
+      <p className="footer-updated">Last Updated: June 2026</p>
 
       <div className="footer-links">
         <a

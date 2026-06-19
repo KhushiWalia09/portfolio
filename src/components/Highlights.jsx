@@ -52,7 +52,7 @@ function Highlights() {
   };
 
   return (
-    <section className="Highlights" id="highlights">
+    <section className="highlights" id="highlights">
       <motion.h2
         className="section-title"
         initial={{ y: 20, opacity: 0 }}
@@ -60,7 +60,7 @@ function Highlights() {
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
-        <span className="text-gradient">Highlights</span>
+        <span className="text-gradient">Milestones & Competencies</span>
       </motion.h2>
 
       <motion.div
@@ -76,13 +76,10 @@ function Highlights() {
           onMouseLeave={handleMouseLeave}
           variants={cardVariants}
         >
-          <div className="project-badge">May-July 2025</div>
-          <h3>Internship Experience</h3>
+          <div className="project-badge">Leadership</div>
+          <h3>Digital Educator</h3>
           <p>
-            Completed an internship at <strong>Sanshil Foundation</strong>,
-            contributing to digital literacy initiatives, documentation, and
-            community outreach programs while supporting technology education
-            and awareness activities.
+            Taught programming basics, MS Office, and digital literacy to 50+ underprivileged students at Sanshil Foundation, enhancing community technology education.
           </p>
         </motion.div>
 
@@ -92,15 +89,10 @@ function Highlights() {
           onMouseLeave={handleMouseLeave}
           variants={cardVariants}
         >
-          <div className="project-badge">2023-2026</div>
-          <h3>BCA Graduate</h3>
+          <div className="project-badge">Development</div>
+          <h3>Full-Stack Builder</h3>
           <p>
-            Successfully completed the{" "}
-            <strong>
-              Bachelor of Computer Applications at The NorthCap University
-            </strong>{" "}
-            , developing practical skills in programming, and web technologies
-            and other creative subjects.
+            Successfully architected and deployed multiple desktop, web, and database applications, demonstrating versatile software engineering capabilities.
           </p>
         </motion.div>
 
@@ -110,11 +102,23 @@ function Highlights() {
           onMouseLeave={handleMouseLeave}
           variants={cardVariants}
         >
-          <div className="project-badge">Always Improving</div>
-          <h3>Projects build</h3>
+          <div className="project-badge">Growth</div>
+          <h3>Active Study Track</h3>
           <p>
-            Actively expanding knowledge in Python, Web development, Databases,
-            and modern software development practices.
+            Dedicated to mastering advanced frontend optimization, TypeScript type safety, state management patterns, and modern cloud deployment architectures.
+          </p>
+        </motion.div>
+
+        <motion.div
+          className="highlights-card glass-card"
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}
+          variants={cardVariants}
+        >
+          <div className="project-badge">Management</div>
+          <h3>Operations & Support</h3>
+          <p>
+            Coordinated NGO database operations, reporting, and event schedules, bridging organizational logistics with technical execution.
           </p>
         </motion.div>
       </motion.div>

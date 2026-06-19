@@ -28,3 +28,9 @@
 .footer-links a:hover {
   color: var(--primary);
 }
+
+.footer-updated {
+  font-size: 0.8rem !important;
+  opacity: 0.6;
+  margin-top: -0.5rem;
+}

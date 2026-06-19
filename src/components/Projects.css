@@ -29,10 +29,31 @@
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
 
+.project-image-container {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 16px;
+  position: relative;
+  border: 1px solid var(--glass-border);
+  margin-bottom: 0.25rem;
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.06);
+}
+
 .project-badge {
   position: absolute;
   top: 1.5rem;
-  right: 0.5rem;
+  right: 1.5rem;
   padding: 0.4rem 0.8rem;
   background: rgba(99, 102, 241, 0.1);
   border: 1px solid rgba(99, 102, 241, 0.2);
@@ -42,6 +63,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  z-index: 2;
 }
 
 .project-card h3 {
@@ -49,6 +71,7 @@
   color: var(--text-main);
   font-weight: 800;
   margin-top: 0.5rem;
+  margin-bottom: 0;
 }
 
 .project-card p {
@@ -97,6 +120,8 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
+  cursor: pointer;
+  border: none;
 }
 
 .project-btn.primary {
@@ -118,6 +143,162 @@
   box-shadow: 0 5px 15px rgba(99, 102, 241, 0.3);
 }
 
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(3, 7, 18, 0.75);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Modal Card */
+.modal-card {
+  width: 100%;
+  max-width: 700px;
+  background: var(--card-bg);
+  border: 1px solid var(--glass-border);
+  padding: 3rem 2.5rem;
+  border-radius: 28px;
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  scrollbar-width: thin;
+  scrollbar-color: var(--glass-border) transparent;
+}
+
+/* Custom scrollbar for webkit */
+.modal-card::-webkit-scrollbar {
+  width: 6px;
+}
+.modal-card::-webkit-scrollbar-thumb {
+  background-color: var(--glass-border);
+  border-radius: 10px;
+}
+
+/* Modal Close Button */
+.modal-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  font-size: 2.2rem;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  line-height: 1;
+  transition: color 0.2s ease, transform 0.2s ease;
+  z-index: 10;
+}
+
+.modal-close:hover {
+  color: var(--primary);
+  transform: scale(1.1);
+}
+
+/* Modal Header */
+.modal-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--glass-border);
+  text-align: left;
+}
+
+.modal-image-container {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  border-radius: 18px;
+  border: 1px solid var(--glass-border);
+  margin-bottom: 1.5rem;
+}
+
+.modal-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal-header .project-badge {
+  position: static;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.modal-header h3 {
+  font-size: 2rem;
+  color: var(--text-main);
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+/* Modal Body */
+.modal-body {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.modal-section h4 {
+  font-size: 1.15rem;
+  color: var(--primary);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  border-left: 3px solid var(--primary);
+  padding-left: 10px;
+}
+
+.modal-section p {
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.modal-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.modal-section li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.modal-section li::before {
+  content: "✦";
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-size: 0.85rem;
+}
+
+/* Modal Footer */
+.modal-footer {
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--glass-border);
+}
+
+.modal-footer .project-links {
+  justify-content: flex-end;
+  margin-top: 0;
+}
+
 @media (max-width: 768px) {
   .projects-grid {
     grid-template-columns: 1fr;
@@ -126,5 +307,21 @@
 
   .project-card {
     padding: 2rem;
+  }
+
+  .project-image-container {
+    height: 180px;
+  }
+
+  .modal-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .modal-image-container {
+    height: 180px;
+  }
+
+  .modal-header h3 {
+    font-size: 1.6rem;
   }
 }

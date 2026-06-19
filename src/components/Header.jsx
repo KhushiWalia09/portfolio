@@ -21,7 +21,20 @@ function Header({ toggleTheme, theme }) {
 
 
       {/* Hamburger Icon */}
-      <div className={`hamburger ${isMenuOpen ? "active" : ""}`} onClick={toggleMenu}>
+      <div 
+        className={`hamburger ${isMenuOpen ? "active" : ""}`} 
+        onClick={toggleMenu}
+        role="button"
+        tabIndex={0}
+        aria-expanded={isMenuOpen}
+        aria-label="Toggle navigation menu"
+        onKeyDown={(e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            toggleMenu();
+          }
+        }}
+      >
         <span className="bar"></span>
         <span className="bar"></span>
         <span className="bar"></span>
