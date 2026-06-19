@@ -122,9 +122,11 @@ function Hero() {
 
   // Typewriter Animation Logic
   const taglines = [
-    "React & Frontend Developer",
-    "Python & Flask Builder",
-    "Tech Educator & Mentor",
+    "BCA Student at NCU",
+    "Web Developer",
+    "React Frontend Builder",
+    "Python & Flask Developer",
+    "Java Programming Enthusiast",
   ];
   const [taglineIndex, setTaglineIndex] = useState(0);
   const [currentText, setCurrentText] = useState("");
@@ -217,19 +219,18 @@ function Hero() {
           </motion.div>
 
           <motion.h1 className="hero-title" variants={itemVariants}>
-            <span className="greeting">Hi, I'm</span>
-            <span className="name">Khushi Walia</span>
+            Hi, I'm <span className="name text-gradient">Khushi Walia</span>
           </motion.h1>
 
           {/* Typewriter Tagline */}
           <motion.div className="hero-tagline-container" variants={itemVariants}>
-            <span className="tagline-prefix">Focused on</span>{" "}
+            <span className="tagline-prefix">I am a</span>{" "}
             <span className="tagline-text">{currentText}</span>
             <span className="tagline-cursor">|</span>
           </motion.div>
 
           <motion.p className="hero-subtitle" variants={itemVariants}>
-            Building intuitive, high-performance web applications with React, Flask, and Firebase.
+            BCA Student & Web Developer | Building intuitive digital experiences with React & Java
           </motion.p>
 
           <motion.div className="hero-buttons" variants={itemVariants}>
@@ -240,7 +241,7 @@ function Hero() {
               whileHover="hover"
               whileTap="tap"
             >
-              See Projects
+              Explore Projects
             </motion.a>
             <motion.a
               href="/Khushi's Resume.pdf"

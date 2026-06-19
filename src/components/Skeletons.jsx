@@ -190,6 +190,48 @@ export function ContactSkeleton() {
   );
 }
 
+export function LearningsTestimonialsSkeleton() {
+  return (
+    <section className="learnings-testimonials skeleton-section">
+      <div className="container">
+        <div className="skeleton-title-center skeleton-base skeleton-shimmer"></div>
+        <div className="learnings-grid">
+          <div className="writings-column">
+            <div className="skeleton-title-left skeleton-base skeleton-shimmer" style={{ width: "220px" }}></div>
+            <div className="writings-list">
+              {[1, 2, 3].map((i) => (
+                <div key={i} className="writing-card glass-card">
+                  <div className="writing-meta" style={{ marginBottom: "10px" }}>
+                    <div className="skeleton-base skeleton-shimmer" style={{ width: "80px", height: "14px" }}></div>
+                    <div className="skeleton-base skeleton-shimmer" style={{ width: "60px", height: "14px" }}></div>
+                  </div>
+                  <div className="skeleton-base skeleton-shimmer" style={{ width: "70%", height: "20px", marginBottom: "10px" }}></div>
+                  <div className="skeleton-base skeleton-shimmer" style={{ width: "100%", height: "14px", marginBottom: "6px" }}></div>
+                  <div className="skeleton-base skeleton-shimmer" style={{ width: "90%", height: "14px", marginBottom: "15px" }}></div>
+                  <div className="writing-tags">
+                    <div className="skeleton-base skeleton-shimmer" style={{ width: "50px", height: "14px" }}></div>
+                    <div className="skeleton-base skeleton-shimmer" style={{ width: "60px", height: "14px" }}></div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="testimonials-column">
+            <div className="skeleton-title-left skeleton-base skeleton-shimmer" style={{ width: "220px" }}></div>
+            <div className="testimonial-container glass-card" style={{ height: "300px" }}>
+              <div className="skeleton-base skeleton-shimmer" style={{ width: "100%", height: "18px", marginBottom: "10px" }}></div>
+              <div className="skeleton-base skeleton-shimmer" style={{ width: "95%", height: "18px", marginBottom: "10px" }}></div>
+              <div className="skeleton-base skeleton-shimmer" style={{ width: "60%", height: "18px", marginBottom: "30px" }}></div>
+              <div className="skeleton-base skeleton-shimmer" style={{ width: "40%", height: "16px", marginBottom: "6px" }}></div>
+              <div className="skeleton-base skeleton-shimmer" style={{ width: "30%", height: "14px" }}></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export function FooterSkeleton() {
   return (
     <footer style={{ padding: "40px 0", borderTop: "1px solid var(--glass-border)", width: "100%" }}>

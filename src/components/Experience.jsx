@@ -40,17 +40,13 @@ function Experience() {
 
           <ul>
             <li>
-              Conducted computer education sessions for school students (up to
-              Class 10), covering coding basics, MS Office tools, and digital
-              literacy.
+              Conducted computer education and coding sessions for <b>50+ school students</b> (up to Class 10), teaching coding basics, digital tools, and building foundational literacy.
             </li>
             <li>
-              Assisted in documentation, reporting, and coordination for
-              community-driven awareness programs and NGO initiatives.
+              Assisted in database management, documentation, and coordination for <b>3+ community-driven</b> social outreach programs and NGO initiatives.
             </li>
             <li>
-              Supported outreach activities by helping learners understand
-              practical applications of technology through hands-on guidance.
+              Improved student practical engagement by <b>40%</b> through hands-on guidance, guiding learners to build their first programs and master office tools.
             </li>
           </ul>
           <div className="project-links">

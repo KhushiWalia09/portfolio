@@ -14,6 +14,7 @@ import {
   ProjectsSkeleton,
   ContactSkeleton,
   FooterSkeleton,
+  LearningsTestimonialsSkeleton,
 } from "./components/Skeletons";
 
 // Lazy loaded components below the fold
@@ -24,6 +25,7 @@ const Experience = lazy(() => import("./components/Experience"));
 const Highlights = lazy(() => import("./components/Highlights"));
 const Skills = lazy(() => import("./components/Skills"));
 const Projects = lazy(() => import("./components/Projects"));
+const LearningsTestimonials = lazy(() => import("./components/LearningsTestimonials"));
 const Contact = lazy(() => import("./components/Contact"));
 const Footer = lazy(() => import("./components/Footer"));
 
@@ -105,32 +107,36 @@ function App() {
       <Header toggleTheme={toggleTheme} theme={theme} />
       <Hero />
       
-      <Suspense fallback={<SeekingOpportunitiesSkeleton />}>
-        <SeekingOpportunities />
-      </Suspense>
-      
       <Suspense fallback={<AboutSkeleton />}>
         <About />
       </Suspense>
-      
-      <Suspense fallback={<EducationSkeleton />}>
-        <Education />
+
+      <Suspense fallback={<SeekingOpportunitiesSkeleton />}>
+        <SeekingOpportunities />
       </Suspense>
       
       <Suspense fallback={<ExperienceSkeleton />}>
         <Experience />
       </Suspense>
       
-      <Suspense fallback={<HighlightsSkeleton />}>
-        <Highlights />
+      <Suspense fallback={<EducationSkeleton />}>
+        <Education />
+      </Suspense>
+      
+      <Suspense fallback={<ProjectsSkeleton />}>
+        <Projects />
       </Suspense>
       
       <Suspense fallback={<SkillsSkeleton />}>
         <Skills />
       </Suspense>
+
+      <Suspense fallback={<HighlightsSkeleton />}>
+        <Highlights />
+      </Suspense>
       
-      <Suspense fallback={<ProjectsSkeleton />}>
-        <Projects />
+      <Suspense fallback={<LearningsTestimonialsSkeleton />}>
+        <LearningsTestimonials />
       </Suspense>
       
       <Suspense fallback={<ContactSkeleton />}>

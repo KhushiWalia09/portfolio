@@ -44,20 +44,20 @@ function Header({ toggleTheme, theme }) {
         <a href="#about" data-link="about" onClick={closeMenu}>
           About
         </a>
-        <a href="#education" data-link="education" onClick={closeMenu}>
-          Education
-        </a>
         <a href="#experience" data-link="experience" onClick={closeMenu}>
           Experience
         </a>
-        <a href="#highlights" data-link="highlights" onClick={closeMenu}>
-          Highlights
+        <a href="#education" data-link="education" onClick={closeMenu}>
+          Education
+        </a>
+        <a href="#projects" data-link="projects" onClick={closeMenu}>
+          Projects
         </a>
         <a href="#skills" data-link="skills" onClick={closeMenu}>
           Skills
         </a>
-        <a href="#projects" data-link="projects" onClick={closeMenu}>
-          Projects
+        <a href="#learnings" data-link="learnings" onClick={closeMenu}>
+          Learnings
         </a>
         <a href="#contact" data-link="contact" onClick={closeMenu}>
           Contact

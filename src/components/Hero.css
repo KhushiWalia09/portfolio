@@ -43,18 +43,8 @@
   font-weight: 800;
 }
 
-.hero-title .greeting {
-  display: block;
-  font-size: clamp(1rem, 2vw, 1.25rem);
-  font-weight: 600;
-  color: var(--primary);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-bottom: 0.5rem;
-}
-
 .hero-title .name {
-  display: block;
+  display: inline;
   background: linear-gradient(135deg, var(--text-main), var(--primary));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
