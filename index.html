@@ -4,26 +4,33 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/png" href="/fevicon.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Khushi | Portfolio</title>
-  
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <meta name="description" content="Khushi Walia - BCA Graduate & Aspiring Software Developer. Explore projects, skills, and experience in modern web development." />
+  <title>Khushi Walia | Software Developer Portfolio</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Khushi Walia - BCA Graduate & Software Developer. Specializing in high-performance React frontends, Python/Flask backend applications, and database designs. View projects, skills, and experience." />
+  <meta name="keywords" content="Khushi Walia, Software Developer, Web Developer, React.js, JavaScript, Python, Flask, Firebase, Portfolio, The NorthCap University" />
+  <meta name="author" content="Khushi Walia" />
+  <link rel="canonical" href="https://khushiwalia.netlify.app" />
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://khushiwalia.netlify.app" />
   <meta property="og:title" content="Khushi Walia | Software Developer Portfolio" />
-  <meta property="og:description" content="BCA Graduate & Aspiring Software Developer specializing in React.js, JavaScript, Python, and MySQL. Explore my projects, skills, and experience." />
-  <meta property="og:image" content="/fevicon.png" />
+  <meta property="og:description" content="BCA Graduate & Software Developer specializing in high-performance React frontends, Python/Flask backends, and Firebase databases. Explore my project case studies." />
+  <meta property="og:image" content="https://khushiwalia.netlify.app/fevicon.png" />
+  <meta property="og:site_name" content="Khushi Walia Portfolio" />
   
   <!-- Twitter -->
-  <meta property="twitter:card" content="summary" />
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://khushiwalia.netlify.app" />
   <meta property="twitter:title" content="Khushi Walia | Software Developer Portfolio" />
-  <meta property="twitter:description" content="BCA Graduate & Aspiring Software Developer specializing in React.js, JavaScript, Python, and MySQL. Explore my projects, skills, and experience." />
-  <meta property="twitter:image" content="/fevicon.png" />
+  <meta property="twitter:description" content="BCA Graduate & Software Developer specializing in high-performance React frontends, Python/Flask backends, and Firebase databases. Explore my project case studies." />
+  <meta property="twitter:image" content="https://khushiwalia.netlify.app/fevicon.png" />
   <script>
     // Prevent auto-scroll BEFORE React loads
     if ('scrollRestoration' in history) {
@@ -69,10 +76,149 @@
       }, 500);
     });
   </script>
+  <style>
+    /* Immediate critical styles for preloader */
+    #static-preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: #030712; /* Dark theme default background */
+      z-index: 99999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      font-family: 'Inter', sans-serif;
+    }
+    
+    #static-preloader .preloader-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      max-width: 400px;
+      padding: 20px;
+      text-align: center;
+    }
+    #static-preloader .preloader-logo-container {
+      position: relative;
+      margin-bottom: 25px;
+    }
+    #static-preloader .preloader-logo {
+      width: 70px;
+      height: 70px;
+      border-radius: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800;
+      font-size: 1.8rem;
+      letter-spacing: -0.05em;
+      background: rgba(17, 24, 39, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+      color: #f9fafb;
+      position: relative;
+      z-index: 2;
+    }
+    #static-preloader .preloader-logo-text {
+      background: linear-gradient(135deg, #6366f1, #a855f7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    #static-preloader .preloader-logo-glow {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 90px;
+      height: 90px;
+      background: radial-gradient(circle, rgba(99, 102, 241, 0.2) 0%, rgba(168, 85, 247, 0.05) 50%, transparent 100%);
+      border-radius: 50%;
+      filter: blur(8px);
+      z-index: 1;
+    }
+    #static-preloader .preloader-name {
+      display: flex;
+      margin-bottom: 35px;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 1.25rem;
+      letter-spacing: 0.25em;
+      color: #f9fafb;
+      text-indent: 0.25em;
+    }
+    #static-preloader .preloader-char {
+      display: inline-block;
+    }
+    #static-preloader .preloader-progress-track {
+      width: 200px;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 15px;
+      position: relative;
+    }
+    #static-preloader .preloader-progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #6366f1, #a855f7);
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(99, 102, 241, 0.5);
+    }
+    #static-preloader .preloader-percentage-text {
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: 0.9rem;
+      color: #9ca3af;
+      letter-spacing: 0.05em;
+    }
+    #static-preloader .preloader-number {
+      font-weight: 600;
+      color: #f9fafb;
+    }
+  </style>
 </head>
 
 <body>
-  <div id="root"></div>
+  <div id="root">
+    <!-- Static preloader displayed before JS bundles load -->
+    <div id="static-preloader">
+      <div class="preloader-inner">
+        <div class="preloader-logo-container">
+          <div class="preloader-logo">
+            <span class="preloader-logo-text">KW</span>
+          </div>
+          <div class="preloader-logo-glow"></div>
+        </div>
+        <div class="preloader-name">
+          <span class="preloader-char">K</span>
+          <span class="preloader-char">H</span>
+          <span class="preloader-char">U</span>
+          <span class="preloader-char">S</span>
+          <span class="preloader-char">H</span>
+          <span class="preloader-char">I</span>
+          <span class="preloader-char">&nbsp;</span>
+          <span class="preloader-char">W</span>
+          <span class="preloader-char">A</span>
+          <span class="preloader-char">L</span>
+          <span class="preloader-char">I</span>
+          <span class="preloader-char">A</span>
+        </div>
+        <div class="preloader-progress-track">
+          <div class="preloader-progress-bar" style="width: 10%"></div>
+        </div>
+        <div class="preloader-percentage-text">
+          <span class="preloader-number">0</span><span class="preloader-percent">%</span>
+        </div>
+      </div>
+    </div>
+  </div>
   <script type="module" src="/src/main.jsx"></script>
 </body>
 

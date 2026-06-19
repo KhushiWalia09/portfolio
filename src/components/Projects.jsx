@@ -140,6 +140,7 @@ function Projects() {
         {projectsData.map((project, index) => (
           <motion.div
             key={index}
+            id={`project-${project.title.toLowerCase().replace(/\s+/g, '-')}`}
             className="project-card glass-card"
             variants={cardVariants}
             whileHover={{ y: -10, transition: { duration: 0.3 } }}
@@ -148,6 +149,10 @@ function Projects() {
               <img
                 src={project.image}
                 alt={project.title}
+                loading="lazy"
+                decoding="async"
+                width="480"
+                height="280"
                 className={`project-image ${
                   project.title === "SmartCycle"
                     ? "smartcycle-image"
@@ -219,6 +224,10 @@ function Projects() {
                   <img
                     src={activeCaseStudy.image}
                     alt={activeCaseStudy.title}
+                    loading="lazy"
+                    decoding="async"
+                    width="600"
+                    height="350"
                     className="modal-image"
                   />
                 </div>

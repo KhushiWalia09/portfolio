@@ -90,3 +90,27 @@ section {
     padding: 80px 0;
   }
 }
+
+/* Lazy loader styles */
+.lazy-loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 250px;
+  width: 100%;
+}
+
+.lazy-loader-spinner {
+  width: 45px;
+  height: 45px;
+  border: 3.5px solid var(--glass-border);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: spinner-rotate 0.9s cubic-bezier(0.5, 0.1, 0.5, 0.9) infinite;
+}
+
+@keyframes spinner-rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}

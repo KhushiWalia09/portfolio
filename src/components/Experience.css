@@ -14,40 +14,44 @@
   left: 10px;
   top: 0;
   bottom: 0;
-  width: 2px;
-  background: linear-gradient(to bottom, var(--primary), var(--secondary));
-  opacity: 0.3;
+  width: 3px;
+  background: linear-gradient(to bottom, var(--primary), var(--secondary), var(--accent));
+  opacity: 0.6;
+  box-shadow: 0 0 8px var(--primary-glow);
 }
 
 .experience-card {
   padding: 2.5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
   position: relative;
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .experience-card:hover {
   transform: translateY(-6px) scale(1.01);
-  border-color: rgba(99, 102, 241, 0.25);
-  box-shadow: 0 20px 40px -15px rgba(99, 102, 241, 0.25);
+  border-color: var(--primary);
+  box-shadow: 0 20px 40px -15px rgba(99, 102, 241, 0.3);
 }
 
 .experience-dot {
   position: absolute;
   left: -48px;
   top: 40px;
-  width: 14px;
-  height: 14px;
+  width: 16px;
+  height: 16px;
   background: var(--primary);
   border-radius: 50%;
-  box-shadow: 0 0 10px var(--primary);
-  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  border: 3px solid var(--background);
+  box-shadow: 0 0 12px var(--primary);
+  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+  z-index: 2;
 }
 
 .experience-card:hover .experience-dot {
-  background: var(--secondary);
-  box-shadow: 0 0 15px var(--secondary);
-  transform: scale(1.2);
+  background: var(--accent);
+  border-color: var(--background);
+  box-shadow: 0 0 18px var(--accent);
+  transform: scale(1.3);
 }
 
 .experience-card h3 {

@@ -1,28 +1,54 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, lazy, Suspense } from "react";
+import { AnimatePresence } from "framer-motion";
 
 import Header from "./components/Header";
 import Hero from "./components/Hero";
-import SeekingOpportunities from "./components/SeekingOpportunities";
-import About from "./components/About";
-import Education from "./components/Education";
-import Experience from "./components/Experience";
-import Highlights from "./components/Highlights";
-import Skills from "./components/Skills";
-import Projects from "./components/Projects";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
+import Preloader from "./components/Preloader";
+import {
+  SeekingOpportunitiesSkeleton,
+  AboutSkeleton,
+  EducationSkeleton,
+  ExperienceSkeleton,
+  HighlightsSkeleton,
+  SkillsSkeleton,
+  ProjectsSkeleton,
+  ContactSkeleton,
+  FooterSkeleton,
+} from "./components/Skeletons";
+
+// Lazy loaded components below the fold
+const SeekingOpportunities = lazy(() => import("./components/SeekingOpportunities"));
+const About = lazy(() => import("./components/About"));
+const Education = lazy(() => import("./components/Education"));
+const Experience = lazy(() => import("./components/Experience"));
+const Highlights = lazy(() => import("./components/Highlights"));
+const Skills = lazy(() => import("./components/Skills"));
+const Projects = lazy(() => import("./components/Projects"));
+const Contact = lazy(() => import("./components/Contact"));
+const Footer = lazy(() => import("./components/Footer"));
 
 function App() {
   const [theme, setTheme] = useState("dark");
+  const [isAppLoading, setIsAppLoading] = useState(true);
 
-  // Theme handling + scroll control + observers
+  // Theme handling
   useEffect(() => {
-    // Apply theme
     document.documentElement.setAttribute("data-theme", theme);
+  }, [theme]);
 
-    // Prevent scroll during initial load
-    document.body.style.overflow = "hidden";
+  // Prevent scroll during initial load
+  useEffect(() => {
+    if (isAppLoading) {
+      document.body.style.overflow = "hidden";
+      document.documentElement.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
+    }
+  }, [isAppLoading]);
 
+  // Scroll restorations & observers
+  useEffect(() => {
     // Prevent browser auto-scroll
     if ("scrollRestoration" in history) {
       history.scrollRestoration = "manual";
@@ -35,14 +61,6 @@ function App() {
 
     // Force scroll to top
     window.scrollTo(0, 0);
-
-    // Re-enable scroll after load
-    requestAnimationFrame(() => {
-      setTimeout(() => {
-        document.body.style.overflow = "";
-        document.documentElement.style.overflow = "";
-      }, 100);
-    });
 
     // Active nav link observer
     const sections = document.querySelectorAll("section");
@@ -61,7 +79,7 @@ function App() {
           }
         });
       },
-      { threshold: 0.6 }
+      { threshold: 0.25 }
     );
 
     sections.forEach((section) => navObserver.observe(section));
@@ -72,7 +90,7 @@ function App() {
       document.body.style.overflow = "";
       document.documentElement.style.overflow = "";
     };
-  }, [theme]);
+  }, []);
 
   const toggleTheme = () => {
     setTheme((prev) => (prev === "dark" ? "light" : "dark"));
@@ -80,17 +98,48 @@ function App() {
 
   return (
     <>
+      <AnimatePresence mode="wait">
+        {isAppLoading && <Preloader onComplete={() => setIsAppLoading(false)} />}
+      </AnimatePresence>
+
       <Header toggleTheme={toggleTheme} theme={theme} />
       <Hero />
-      <SeekingOpportunities />
-      <About />
-      <Education />
-      <Experience />
-      <Highlights />
-      <Skills />
-      <Projects />
-      <Contact />
-      <Footer />
+      
+      <Suspense fallback={<SeekingOpportunitiesSkeleton />}>
+        <SeekingOpportunities />
+      </Suspense>
+      
+      <Suspense fallback={<AboutSkeleton />}>
+        <About />
+      </Suspense>
+      
+      <Suspense fallback={<EducationSkeleton />}>
+        <Education />
+      </Suspense>
+      
+      <Suspense fallback={<ExperienceSkeleton />}>
+        <Experience />
+      </Suspense>
+      
+      <Suspense fallback={<HighlightsSkeleton />}>
+        <Highlights />
+      </Suspense>
+      
+      <Suspense fallback={<SkillsSkeleton />}>
+        <Skills />
+      </Suspense>
+      
+      <Suspense fallback={<ProjectsSkeleton />}>
+        <Projects />
+      </Suspense>
+      
+      <Suspense fallback={<ContactSkeleton />}>
+        <Contact />
+      </Suspense>
+      
+      <Suspense fallback={<FooterSkeleton />}>
+        <Footer />
+      </Suspense>
     </>
   );
 }

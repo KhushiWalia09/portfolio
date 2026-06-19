@@ -17,15 +17,22 @@ function About() {
         </h2>
 
         <p className="about-text">
-          My journey into Web development started with a curiosity about how the web functions, which quickly turned into a passion for writing clean, efficient code and building user-centric interfaces. As a BCA graduate from The NorthCap University, I focus on the intersection of structured logic and interactive design.
+          I don't just write code—I build bridges between complex backend systems and intuitive frontend experiences. 
+          As a BCA graduate from The NorthCap University, my journey started with a simple question: 
+          <i>"How does a click here render an entire experience there?"</i> That curiosity soon evolved into a dedicated 
+          focus on mastering full-stack web applications, combining standard logic with beautiful frontend interactions.
         </p>
 
         <p className="about-text">
-          I am driven by problem-solving—whether it's debugging a complex application state, building responsive frontend components, or designing relational databases. My goal is to build digital experiences that are not only performant and accessible but also meaningful for the end-user.
+          What drives me is structural problem-solving. Whether it's optimization, state architecture in React, or relational database design, I love finding the most elegant and clean way to bring concepts to life. 
+          I believe software should be performant, accessible, and delight the user at every viewport.
         </p>
 
         <p className="about-text">
-          Continuous growth is core to my mindset. Outside of my academic projects, I enjoy sharing my passion for technology by teaching programming basics and digital literacy to school students, which has helped hone my collaboration and technical communication skills.
+          A unique chapter of my growth has been giving back. Teaching programming concepts and digital literacy to 50+ 
+          underprivileged students at The Sanshil Foundation has been one of my most rewarding challenges. 
+          Explaining logic loops to young learners pushed me to refine my technical communication and patience, 
+          reinforcing my core belief: <b>true mastery is when you can explain complex systems simply.</b>
         </p>
       </motion.div>
     </section>

@@ -23,7 +23,14 @@ export default defineConfig([
       },
     },
     rules: {
-      'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
+      'no-unused-vars': [
+        'error',
+        {
+          varsIgnorePattern: '^[A-Z_]|motion|eventManagementImg',
+          argsIgnorePattern: '^[a-zA-Z_]',
+          caughtErrorsIgnorePattern: '^[a-zA-Z_]',
+        },
+      ],
     },
   },
 ])

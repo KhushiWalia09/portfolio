@@ -12,82 +12,172 @@
 }
 
 .skill-card {
-  padding: 2.5rem;
-  text-align: left;
+  padding: 2rem;
   border-radius: 24px;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1), border-color 0.4s ease, box-shadow 0.4s ease;
+  border: 1px solid var(--glass-border);
+}
+
+.skill-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(var(--skill-glow), 0.4);
+  box-shadow: 0 15px 35px -5px rgba(var(--skill-glow), 0.25);
+}
+
+.skill-card-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 .skill-card-header {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 1.5rem;
+  gap: 16px;
 }
 
-.skill-dot {
-  width: 12px;
-  height: 12px;
-  background: var(--primary);
-  border-radius: 50%;
-  box-shadow: 0 0 15px var(--primary-glow);
+.skill-icon-wrapper {
+  width: 54px;
+  height: 54px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.skill-svg {
+  width: 28px;
+  height: 28px;
+  transition: transform 0.3s ease;
+}
+
+.skill-card:hover .skill-svg {
+  transform: scale(1.15) rotate(5deg);
+}
+
+.skill-header-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .skill-card h3 {
-  font-size: 1.4rem;
+  font-size: 1.25rem;
   color: var(--text-main);
-  font-weight: 800;
+  font-weight: 700;
   margin: 0;
 }
 
-.skills-badge-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-}
-
-.skill-badge {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 14px;
-  border-radius: 50px;
-  font-size: 0.9rem;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid var(--glass-border);
-  transition: all 0.3s ease;
-}
-
-.skill-badge:hover {
-  background: rgba(99, 102, 241, 0.08);
-  border-color: rgba(99, 102, 241, 0.3);
-  transform: translateY(-2px);
-}
-
-.skill-name {
-  color: var(--text-main);
-  font-weight: 500;
-}
-
-.skill-level {
-  font-size: 0.75rem;
-  font-weight: 600;
+.skill-level-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   padding: 2px 8px;
   border-radius: 20px;
+  width: fit-content;
 }
 
-.skill-level.advanced {
+.skill-level-badge.advanced {
   background: rgba(16, 185, 129, 0.1);
   color: #10b981;
   border: 1px solid rgba(16, 185, 129, 0.2);
 }
 
-.skill-level.intermediate {
+.skill-level-badge.intermediate {
   background: rgba(59, 130, 246, 0.1);
   color: #3b82f6;
   border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+/* Proficiency Bar Styles */
+.skill-proficiency {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.proficiency-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+}
+
+.proficiency-label {
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.proficiency-value {
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.proficiency-bar-bg {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+.proficiency-bar-fill {
+  height: 100%;
+  border-radius: 10px;
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+}
+
+/* Backed By Projects Styles */
+.skill-backed-projects {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.projects-heading {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.project-tags-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.project-tag-btn {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--glass-border);
+  color: var(--text-main);
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.project-tag-btn:hover {
+  background: rgba(var(--skill-glow), 0.1);
+  border-color: rgba(var(--skill-glow), 0.4);
+  transform: translateY(-2px);
+  color: var(--text-main);
+}
+
+.no-projects-tag {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-style: italic;
 }
 
 @media (max-width: 768px) {
