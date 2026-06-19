@@ -178,7 +178,7 @@ function Hero() {
             <span className="name">Khushi Walia</span>
           </motion.h1>
           <motion.p className="hero-subtitle" variants={itemVariants}>
-            BCA Graduate & <b>Aspiring Software Developer</b> | Building intuitive, responsive web experiences with React, JavaScript, and Modern Web Technologies. Passionate about problem-solving and software engineering.
+            BCA Graduate & <b>Aspiring Web Developer</b> | Building intuitive, responsive web experiences with React, JavaScript, and Modern Web Technologies. Passionate about problem-solving and software engineering.
           </motion.p>
 
           <motion.div className="hero-buttons" variants={itemVariants}>
