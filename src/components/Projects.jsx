@@ -3,10 +3,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import "./Projects.css";
 
 // Import project mockup images
-import prepedgeImg from "../assets/prepedge.png";
-import smartcycleImg from "../assets/smartcycle.png";
-import divineDriftImg from "../assets/divine-drift.png";
-import eventManagementImg from "../assets/event-management.png";
+import prepedgeImg from "../assets/prepedge.webp";
+import smartcycleImg from "../assets/smartcycle.webp";
+import divineDriftImg from "../assets/divine-drift.webp";
 
 function Projects() {
   const [activeCaseStudy, setActiveCaseStudy] = useState(null);

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import "./Hero.css";
-import profileImg from "../assets/profile.jpeg";
+import profileImg from "../assets/profile.webp";
 
 function Hero() {
   const canvasRef = useRef(null);
